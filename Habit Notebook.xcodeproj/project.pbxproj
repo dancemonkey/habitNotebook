@@ -1,0 +1,401 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		10405B511BFC3C5D007C5B2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10405B501BFC3C5D007C5B2F /* AppDelegate.swift */; };
+		10405B531BFC3C5D007C5B2F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10405B521BFC3C5D007C5B2F /* ViewController.swift */; };
+		10405B561BFC3C5D007C5B2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10405B541BFC3C5D007C5B2F /* Main.storyboard */; };
+		10405B581BFC3C5D007C5B2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10405B571BFC3C5D007C5B2F /* Assets.xcassets */; };
+		10405B5B1BFC3C5D007C5B2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10405B591BFC3C5D007C5B2F /* LaunchScreen.storyboard */; };
+		10405B661BFC3C5D007C5B2F /* Habit_NotebookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10405B651BFC3C5D007C5B2F /* Habit_NotebookTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		10405B621BFC3C5D007C5B2F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 10405B451BFC3C5D007C5B2F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 10405B4C1BFC3C5D007C5B2F;
+			remoteInfo = "Habit Notebook";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		10405B4D1BFC3C5D007C5B2F /* Habit Notebook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Habit Notebook.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		10405B501BFC3C5D007C5B2F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		10405B521BFC3C5D007C5B2F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		10405B551BFC3C5D007C5B2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		10405B571BFC3C5D007C5B2F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		10405B5A1BFC3C5D007C5B2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		10405B5C1BFC3C5D007C5B2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		10405B611BFC3C5D007C5B2F /* Habit NotebookTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Habit NotebookTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		10405B651BFC3C5D007C5B2F /* Habit_NotebookTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habit_NotebookTests.swift; sourceTree = "<group>"; };
+		10405B671BFC3C5D007C5B2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		10405B4A1BFC3C5D007C5B2F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		10405B5E1BFC3C5D007C5B2F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		10405B441BFC3C5D007C5B2F = {
+			isa = PBXGroup;
+			children = (
+				10405B4F1BFC3C5D007C5B2F /* Habit Notebook */,
+				10405B641BFC3C5D007C5B2F /* Habit NotebookTests */,
+				10405B4E1BFC3C5D007C5B2F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		10405B4E1BFC3C5D007C5B2F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				10405B4D1BFC3C5D007C5B2F /* Habit Notebook.app */,
+				10405B611BFC3C5D007C5B2F /* Habit NotebookTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		10405B4F1BFC3C5D007C5B2F /* Habit Notebook */ = {
+			isa = PBXGroup;
+			children = (
+				10405B501BFC3C5D007C5B2F /* AppDelegate.swift */,
+				10405B521BFC3C5D007C5B2F /* ViewController.swift */,
+				10405B541BFC3C5D007C5B2F /* Main.storyboard */,
+				10405B571BFC3C5D007C5B2F /* Assets.xcassets */,
+				10405B591BFC3C5D007C5B2F /* LaunchScreen.storyboard */,
+				10405B5C1BFC3C5D007C5B2F /* Info.plist */,
+			);
+			path = "Habit Notebook";
+			sourceTree = "<group>";
+		};
+		10405B641BFC3C5D007C5B2F /* Habit NotebookTests */ = {
+			isa = PBXGroup;
+			children = (
+				10405B651BFC3C5D007C5B2F /* Habit_NotebookTests.swift */,
+				10405B671BFC3C5D007C5B2F /* Info.plist */,
+			);
+			path = "Habit NotebookTests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		10405B4C1BFC3C5D007C5B2F /* Habit Notebook */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 10405B6A1BFC3C5D007C5B2F /* Build configuration list for PBXNativeTarget "Habit Notebook" */;
+			buildPhases = (
+				10405B491BFC3C5D007C5B2F /* Sources */,
+				10405B4A1BFC3C5D007C5B2F /* Frameworks */,
+				10405B4B1BFC3C5D007C5B2F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Habit Notebook";
+			productName = "Habit Notebook";
+			productReference = 10405B4D1BFC3C5D007C5B2F /* Habit Notebook.app */;
+			productType = "com.apple.product-type.application";
+		};
+		10405B601BFC3C5D007C5B2F /* Habit NotebookTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 10405B6D1BFC3C5D007C5B2F /* Build configuration list for PBXNativeTarget "Habit NotebookTests" */;
+			buildPhases = (
+				10405B5D1BFC3C5D007C5B2F /* Sources */,
+				10405B5E1BFC3C5D007C5B2F /* Frameworks */,
+				10405B5F1BFC3C5D007C5B2F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				10405B631BFC3C5D007C5B2F /* PBXTargetDependency */,
+			);
+			name = "Habit NotebookTests";
+			productName = "Habit NotebookTests";
+			productReference = 10405B611BFC3C5D007C5B2F /* Habit NotebookTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		10405B451BFC3C5D007C5B2F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "Drew Lanning";
+				TargetAttributes = {
+					10405B4C1BFC3C5D007C5B2F = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+					10405B601BFC3C5D007C5B2F = {
+						CreatedOnToolsVersion = 7.1.1;
+						TestTargetID = 10405B4C1BFC3C5D007C5B2F;
+					};
+				};
+			};
+			buildConfigurationList = 10405B481BFC3C5D007C5B2F /* Build configuration list for PBXProject "Habit Notebook" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 10405B441BFC3C5D007C5B2F;
+			productRefGroup = 10405B4E1BFC3C5D007C5B2F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				10405B4C1BFC3C5D007C5B2F /* Habit Notebook */,
+				10405B601BFC3C5D007C5B2F /* Habit NotebookTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		10405B4B1BFC3C5D007C5B2F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10405B5B1BFC3C5D007C5B2F /* LaunchScreen.storyboard in Resources */,
+				10405B581BFC3C5D007C5B2F /* Assets.xcassets in Resources */,
+				10405B561BFC3C5D007C5B2F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		10405B5F1BFC3C5D007C5B2F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		10405B491BFC3C5D007C5B2F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10405B531BFC3C5D007C5B2F /* ViewController.swift in Sources */,
+				10405B511BFC3C5D007C5B2F /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		10405B5D1BFC3C5D007C5B2F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10405B661BFC3C5D007C5B2F /* Habit_NotebookTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		10405B631BFC3C5D007C5B2F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 10405B4C1BFC3C5D007C5B2F /* Habit Notebook */;
+			targetProxy = 10405B621BFC3C5D007C5B2F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		10405B541BFC3C5D007C5B2F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				10405B551BFC3C5D007C5B2F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		10405B591BFC3C5D007C5B2F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				10405B5A1BFC3C5D007C5B2F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		10405B681BFC3C5D007C5B2F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		10405B691BFC3C5D007C5B2F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		10405B6B1BFC3C5D007C5B2F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Habit Notebook/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.drewlanning.Habit-Notebook";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		10405B6C1BFC3C5D007C5B2F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Habit Notebook/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.drewlanning.Habit-Notebook";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		10405B6E1BFC3C5D007C5B2F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Habit NotebookTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.drewlanning.Habit-NotebookTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Habit Notebook.app/Habit Notebook";
+			};
+			name = Debug;
+		};
+		10405B6F1BFC3C5D007C5B2F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Habit NotebookTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.drewlanning.Habit-NotebookTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Habit Notebook.app/Habit Notebook";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		10405B481BFC3C5D007C5B2F /* Build configuration list for PBXProject "Habit Notebook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				10405B681BFC3C5D007C5B2F /* Debug */,
+				10405B691BFC3C5D007C5B2F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		10405B6A1BFC3C5D007C5B2F /* Build configuration list for PBXNativeTarget "Habit Notebook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				10405B6B1BFC3C5D007C5B2F /* Debug */,
+				10405B6C1BFC3C5D007C5B2F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		10405B6D1BFC3C5D007C5B2F /* Build configuration list for PBXNativeTarget "Habit NotebookTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				10405B6E1BFC3C5D007C5B2F /* Debug */,
+				10405B6F1BFC3C5D007C5B2F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 10405B451BFC3C5D007C5B2F /* Project object */;
+}

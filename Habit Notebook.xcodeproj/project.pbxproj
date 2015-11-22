@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1018AA6D1C0163FE0087F076 /* HabitPagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1018AA6C1C0163FE0087F076 /* HabitPagesViewController.swift */; };
 		10405B511BFC3C5D007C5B2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10405B501BFC3C5D007C5B2F /* AppDelegate.swift */; };
 		10405B531BFC3C5D007C5B2F /* HabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10405B521BFC3C5D007C5B2F /* HabitViewController.swift */; };
 		10405B561BFC3C5D007C5B2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10405B541BFC3C5D007C5B2F /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1018AA6C1C0163FE0087F076 /* HabitPagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitPagesViewController.swift; sourceTree = "<group>"; };
 		10405B4D1BFC3C5D007C5B2F /* Habit Notebook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Habit Notebook.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		10405B501BFC3C5D007C5B2F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10405B521BFC3C5D007C5B2F /* HabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 				10405B501BFC3C5D007C5B2F /* AppDelegate.swift */,
 				10405B521BFC3C5D007C5B2F /* HabitViewController.swift */,
 				10405B541BFC3C5D007C5B2F /* Main.storyboard */,
+				1018AA6C1C0163FE0087F076 /* HabitPagesViewController.swift */,
 				10405B571BFC3C5D007C5B2F /* Assets.xcassets */,
 				10405B591BFC3C5D007C5B2F /* LaunchScreen.storyboard */,
 				10405B5C1BFC3C5D007C5B2F /* Info.plist */,
@@ -197,6 +200,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1018AA6D1C0163FE0087F076 /* HabitPagesViewController.swift in Sources */,
 				10405B531BFC3C5D007C5B2F /* HabitViewController.swift in Sources */,
 				10405B511BFC3C5D007C5B2F /* AppDelegate.swift in Sources */,
 			);

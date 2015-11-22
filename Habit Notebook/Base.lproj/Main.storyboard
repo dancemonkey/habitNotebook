@@ -7,10 +7,18 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--Page View Controller-->
+        <scene sceneID="Ta4-iN-bid">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="csP-9t-J1a" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mrt-03-KQP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="59" y="-278"/>
+        </scene>
         <!--Habit Tracking-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="Habit Tracking" id="BYZ-38-t0r" customClass="ViewController" customModule="Habit_Notebook" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Habit Tracking" id="BYZ-38-t0r" customClass="HabitViewController" customModule="Habit_Notebook" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -28,7 +36,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <state key="normal" title="done">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.0" green="0.74390388259999995" blue="0.00022772667850000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -40,11 +48,10 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Habit Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Plu-JB-Bsz">
-                                <rect key="frame" x="208" y="28" width="184" height="42"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Habit Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Plu-JB-Bsz">
+                                <rect key="frame" x="0.0" y="28" width="600" height="42"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="suc-Us-BkX">
@@ -56,15 +63,15 @@
                                 <items>
                                     <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="HEa-R2-qMB"/>
                                     <barButtonItem title="Edit Habit" id="9nX-43-ypV">
-                                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="tintColor" red="0.60784313729999995" green="0.30196078430000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="sQJ-h6-ARv"/>
-                                    <barButtonItem title="Reports" id="4gL-qI-T2e">
-                                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <barButtonItem title="Progress" id="4gL-qI-T2e">
+                                        <color key="tintColor" red="0.60784313725490191" green="0.30196078431372547" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </barButtonItem>
                                     <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="Rxa-OO-Nyz"/>
                                 </items>
-                                <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="barTintColor" red="1" green="0.49803921568627452" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </toolbar>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V62-30-wni">
                                 <rect key="frame" x="20" y="428" width="560" height="128"/>
@@ -96,7 +103,7 @@
                             </label>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Plu-JB-Bsz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3by-r9-41p"/>
                             <constraint firstItem="D6A-ok-AZ2" firstAttribute="top" secondItem="N5T-43-sdt" secondAttribute="bottom" constant="8" id="45Q-Xe-gol"/>
@@ -108,11 +115,13 @@
                             <constraint firstAttribute="trailingMargin" secondItem="suc-Us-BkX" secondAttribute="trailing" constant="-20" id="Imu-DK-e9q"/>
                             <constraint firstItem="suc-Us-BkX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="O3S-5J-AZm"/>
                             <constraint firstItem="suc-Us-BkX" firstAttribute="top" secondItem="V62-30-wni" secondAttribute="bottom" id="WCV-cL-FJW"/>
+                            <constraint firstItem="Plu-JB-Bsz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="YKw-De-A3d"/>
                             <constraint firstItem="V62-30-wni" firstAttribute="centerX" secondItem="suc-Us-BkX" secondAttribute="centerX" id="aLM-yL-xM0"/>
                             <constraint firstItem="suc-Us-BkX" firstAttribute="top" secondItem="V62-30-wni" secondAttribute="bottom" id="bhN-9w-E9b"/>
                             <constraint firstAttribute="trailingMargin" secondItem="V62-30-wni" secondAttribute="trailing" constant="131" id="cQ8-Bk-DG7"/>
                             <constraint firstItem="D6A-ok-AZ2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="h6t-lM-VTY"/>
                             <constraint firstAttribute="leadingMargin" secondItem="V62-30-wni" secondAttribute="leading" id="jFb-Sb-23U"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Plu-JB-Bsz" secondAttribute="trailing" constant="-20" id="kek-2v-WFs"/>
                             <constraint firstItem="D6A-ok-AZ2" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="205" id="oNp-nG-iig"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="suc-Us-BkX" secondAttribute="bottom" id="u5Q-Z1-ZQr"/>
                             <constraint firstItem="suc-Us-BkX" firstAttribute="top" secondItem="V62-30-wni" secondAttribute="bottom" id="zLE-Rp-yZx"/>

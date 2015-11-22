@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		10405B511BFC3C5D007C5B2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10405B501BFC3C5D007C5B2F /* AppDelegate.swift */; };
-		10405B531BFC3C5D007C5B2F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10405B521BFC3C5D007C5B2F /* ViewController.swift */; };
+		10405B531BFC3C5D007C5B2F /* HabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10405B521BFC3C5D007C5B2F /* HabitViewController.swift */; };
 		10405B561BFC3C5D007C5B2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10405B541BFC3C5D007C5B2F /* Main.storyboard */; };
 		10405B581BFC3C5D007C5B2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10405B571BFC3C5D007C5B2F /* Assets.xcassets */; };
 		10405B5B1BFC3C5D007C5B2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10405B591BFC3C5D007C5B2F /* LaunchScreen.storyboard */; };
@@ -28,7 +28,7 @@
 /* Begin PBXFileReference section */
 		10405B4D1BFC3C5D007C5B2F /* Habit Notebook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Habit Notebook.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		10405B501BFC3C5D007C5B2F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		10405B521BFC3C5D007C5B2F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		10405B521BFC3C5D007C5B2F /* HabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitViewController.swift; sourceTree = "<group>"; };
 		10405B551BFC3C5D007C5B2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		10405B571BFC3C5D007C5B2F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		10405B5A1BFC3C5D007C5B2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -78,7 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				10405B501BFC3C5D007C5B2F /* AppDelegate.swift */,
-				10405B521BFC3C5D007C5B2F /* ViewController.swift */,
+				10405B521BFC3C5D007C5B2F /* HabitViewController.swift */,
 				10405B541BFC3C5D007C5B2F /* Main.storyboard */,
 				10405B571BFC3C5D007C5B2F /* Assets.xcassets */,
 				10405B591BFC3C5D007C5B2F /* LaunchScreen.storyboard */,
@@ -197,7 +197,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				10405B531BFC3C5D007C5B2F /* ViewController.swift in Sources */,
+				10405B531BFC3C5D007C5B2F /* HabitViewController.swift in Sources */,
 				10405B511BFC3C5D007C5B2F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -386,6 +386,7 @@
 				10405B6C1BFC3C5D007C5B2F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		10405B6D1BFC3C5D007C5B2F /* Build configuration list for PBXNativeTarget "Habit NotebookTests" */ = {
 			isa = XCConfigurationList;
@@ -394,6 +395,7 @@
 				10405B6F1BFC3C5D007C5B2F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

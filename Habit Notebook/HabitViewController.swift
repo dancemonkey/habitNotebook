@@ -14,10 +14,35 @@
 import UIKit
 
 class HabitViewController: UIViewController {
-
+  
+  var habit: Habit!
+  let now = NSDate()
+  
+  @IBOutlet weak var habitName: UILabel!
+  @IBOutlet weak var habitInfo: UILabel!
+  var total: Int! {
+    didSet {
+      habitInfo.text = "\(now)" + "\n" + "\(habit.unitName!) - \(total)"
+    }
+  }
+  @IBAction func performedHabit(sender: UIButton) {
+    habit.addToDailyTotal(habit.unitTotal!)
+    total = habit.getTotalForToday()
+  }
+  
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
+  }
+  
+  override func viewWillAppear(animated: Bool) {
+    super.viewWillAppear(true)
+    
+    // TEST HABIT TO HOOK UP LABELS AND TEST MODEL HELPER FUNCTIONS
+    self.habit = Habit(name: "Nose Picking", unitName: "Picks", unitTotal: nil)
+    
+    habitName.text = habit.name
+    total = habit.getTotalForToday()
   }
 
   override func didReceiveMemoryWarning() {

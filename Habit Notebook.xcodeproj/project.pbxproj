@@ -14,6 +14,7 @@
 		10405B581BFC3C5D007C5B2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10405B571BFC3C5D007C5B2F /* Assets.xcassets */; };
 		10405B5B1BFC3C5D007C5B2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10405B591BFC3C5D007C5B2F /* LaunchScreen.storyboard */; };
 		10405B661BFC3C5D007C5B2F /* Habit_NotebookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10405B651BFC3C5D007C5B2F /* Habit_NotebookTests.swift */; };
+		105BE1A81C02962300D8AB2A /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105BE1A71C02962300D8AB2A /* Habit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		10405B611BFC3C5D007C5B2F /* Habit NotebookTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Habit NotebookTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		10405B651BFC3C5D007C5B2F /* Habit_NotebookTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habit_NotebookTests.swift; sourceTree = "<group>"; };
 		10405B671BFC3C5D007C5B2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		105BE1A71C02962300D8AB2A /* Habit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				10405B521BFC3C5D007C5B2F /* HabitViewController.swift */,
 				10405B541BFC3C5D007C5B2F /* Main.storyboard */,
 				1018AA6C1C0163FE0087F076 /* HabitPagesViewController.swift */,
+				105BE1A71C02962300D8AB2A /* Habit.swift */,
 				10405B571BFC3C5D007C5B2F /* Assets.xcassets */,
 				10405B591BFC3C5D007C5B2F /* LaunchScreen.storyboard */,
 				10405B5C1BFC3C5D007C5B2F /* Info.plist */,
@@ -202,6 +205,7 @@
 			files = (
 				1018AA6D1C0163FE0087F076 /* HabitPagesViewController.swift in Sources */,
 				10405B531BFC3C5D007C5B2F /* HabitViewController.swift in Sources */,
+				105BE1A81C02962300D8AB2A /* Habit.swift in Sources */,
 				10405B511BFC3C5D007C5B2F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

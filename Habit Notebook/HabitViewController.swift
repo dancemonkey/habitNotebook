@@ -40,9 +40,7 @@ class HabitViewController: UIViewController {
   override func viewWillAppear(animated: Bool) {
     super.viewWillAppear(true)
     
-    // TEST HABIT TO HOOK UP LABELS AND TEST MODEL HELPER FUNCTIONS
-    // IN PRODUCTION THIS WILL POPULATE FROM datasource, WHICH WILL BE SET FROM THE PAGEVIEWCONTROLLER
-    self.habit = Habit(name: "Nose Picking", unitName: "Picks", unitTotal: nil)
+    self.habit = Habit(name: datasource.name, unitName: datasource.unitName, unitTotal: datasource.unitTotal)
     
     habitName.text = habit.name
     total = habit.getTotalForToday()

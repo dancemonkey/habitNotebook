@@ -18,6 +18,11 @@ class HabitPagesViewController: UIPageViewController, UIPageViewControllerDataSo
     override func viewDidLoad() {
         super.viewDidLoad()
       
+      // FAKE TEST DATA SO WE HAVE PAGES TO TURN IN THE INTERFACE
+      testSourceArray.append(Habit(name: "H1", unitName: "Quarts", unitTotal: 5))
+      testSourceArray.append(Habit(name: "H2", unitName: "Smokes", unitTotal: 1))
+      testSourceArray.append(Habit(name: "H3", unitName: "Laps", unitTotal: 1))
+      
       dataSource = self
       if testSourceArray.count > 0 {
         let firstController = self.storyboard?.instantiateViewControllerWithIdentifier("HabitController") as! HabitViewController
@@ -25,13 +30,7 @@ class HabitPagesViewController: UIPageViewController, UIPageViewControllerDataSo
         firstController.setItemIndex(0)
         let startingControllers = [firstController]
         setViewControllers(startingControllers, direction: .Forward, animated: false, completion: nil)
-        
       }
-      
-      // FAKE TEST DATA SO WE HAVE PAGES TO TURN IN THE INTERFACE
-      testSourceArray.append(Habit(name: "H1", unitName: "Quarts", unitTotal: 5))
-      testSourceArray.append(Habit(name: "H2", unitName: "Smokes", unitTotal: 1))
-      testSourceArray.append(Habit(name: "H3", unitName: "Laps", unitTotal: 1))
 
         // Do any additional setup after loading the view.
     }
@@ -54,7 +53,7 @@ class HabitPagesViewController: UIPageViewController, UIPageViewControllerDataSo
   func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
     let itemController = viewController as! HabitViewController
     if itemController.getItemIndex() > 0 {
-      return getItemController(itemController.getItemIndex())
+      return getItemController(itemController.getItemIndex()-1)
     }
     return nil
   }
@@ -66,6 +65,14 @@ class HabitPagesViewController: UIPageViewController, UIPageViewControllerDataSo
       return getItemController(itemController.getItemIndex()+1)
     }
     return nil
+  }
+  
+  func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
+    return testSourceArray.count
+  }
+  
+  func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
+    return 0
   }
 
     /*

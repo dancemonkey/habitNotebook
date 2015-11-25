@@ -16,7 +16,9 @@ import UIKit
 class HabitViewController: UIViewController {
   
   var habit: Habit!
+  var datasource: Habit!
   let now = NSDate()
+  private var itemIndex: Int!
   
   @IBOutlet weak var habitName: UILabel!
   @IBOutlet weak var habitInfo: UILabel!
@@ -39,6 +41,7 @@ class HabitViewController: UIViewController {
     super.viewWillAppear(true)
     
     // TEST HABIT TO HOOK UP LABELS AND TEST MODEL HELPER FUNCTIONS
+    // IN PRODUCTION THIS WILL POPULATE FROM datasource, WHICH WILL BE SET FROM THE PAGEVIEWCONTROLLER
     self.habit = Habit(name: "Nose Picking", unitName: "Picks", unitTotal: nil)
     
     habitName.text = habit.name
@@ -49,7 +52,14 @@ class HabitViewController: UIViewController {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
   }
-
+  
+  func setItemIndex(toIndex: Int) {
+    itemIndex = toIndex
+  }
+  
+  func getItemIndex() -> Int {
+    return itemIndex
+  }
 
 }
 

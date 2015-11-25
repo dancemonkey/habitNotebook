@@ -7,15 +7,31 @@
 //
 
 // this will load an instance of each habitVC with each swipe.
-// This will also be its own datasource delegate, must have the two convenience functions
 // initialize in its viewDidLoad at top of program, load first content VC and init data
 
 import UIKit
 
-class HabitPagesViewController: UIPageViewController {
+class HabitPagesViewController: UIPageViewController, UIPageViewControllerDataSource {
+  
+  var testSourceArray = [Habit]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+      
+      dataSource = self
+      if testSourceArray.count > 0 {
+        let firstController = self.storyboard?.instantiateViewControllerWithIdentifier("HabitController") as! HabitViewController
+        firstController.datasource = testSourceArray[0]
+        firstController.setItemIndex(0)
+        let startingControllers = [firstController]
+        setViewControllers(startingControllers, direction: .Forward, animated: false, completion: nil)
+        
+      }
+      
+      // FAKE TEST DATA SO WE HAVE PAGES TO TURN IN THE INTERFACE
+      testSourceArray.append(Habit(name: "H1", unitName: "Quarts", unitTotal: 5))
+      testSourceArray.append(Habit(name: "H2", unitName: "Smokes", unitTotal: 1))
+      testSourceArray.append(Habit(name: "H3", unitName: "Laps", unitTotal: 1))
 
         // Do any additional setup after loading the view.
     }
@@ -24,7 +40,33 @@ class HabitPagesViewController: UIPageViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+  
+  func getItemController(fromDataIndex: Int) -> HabitViewController? {
+    if testSourceArray.count >= fromDataIndex {
+      let newController = storyboard?.instantiateViewControllerWithIdentifier("HabitController") as! HabitViewController
+      newController.datasource = testSourceArray[fromDataIndex]
+      newController.setItemIndex(fromDataIndex)
+      return newController
+    }
+    return nil
+  }
+  
+  func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
+    let itemController = viewController as! HabitViewController
+    if itemController.getItemIndex() > 0 {
+      return getItemController(itemController.getItemIndex())
+    }
+    return nil
+  }
+  
+  
+  func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
+    let itemController = viewController as! HabitViewController
+    if itemController.getItemIndex()+1 < testSourceArray.count {
+      return getItemController(itemController.getItemIndex()+1)
+    }
+    return nil
+  }
 
     /*
     // MARK: - Navigation

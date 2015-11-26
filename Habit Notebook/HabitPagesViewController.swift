@@ -25,20 +25,21 @@ class HabitPagesViewController: UIPageViewController, UIPageViewControllerDataSo
       
       dataSource = self
       if testSourceArray.count > 0 {
-        let firstController = self.storyboard?.instantiateViewControllerWithIdentifier("HabitController") as! HabitViewController
-        firstController.datasource = testSourceArray[0]
-        firstController.setItemIndex(0)
-        let startingControllers = [firstController]
+        let startingControllers = [getItemController(0)!]
         setViewControllers(startingControllers, direction: .Forward, animated: false, completion: nil)
       }
-
-        // Do any additional setup after loading the view.
+      setAppearance()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
+  
+  func setAppearance() {
+    let appearance = UIPageControl.appearance()
+    appearance.backgroundColor = UIColor(red: 255/255, green: 140/255, blue: 0.0, alpha: 1.0)
+    appearance.pageIndicatorTintColor = UIColor(red: 155/255, green: 77/255, blue: 0.0, alpha: 1.0)
+  }
   
   func getItemController(fromDataIndex: Int) -> HabitViewController? {
     if testSourceArray.count >= fromDataIndex {

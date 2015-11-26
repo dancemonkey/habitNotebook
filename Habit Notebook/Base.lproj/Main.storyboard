@@ -51,7 +51,7 @@
                                     <action selector="performedHabit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XJh-sv-0Rt"/>
                                 </connections>
                             </button>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="suc-Us-BkX">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="suc-Us-BkX">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <animations/>
                                 <constraints>

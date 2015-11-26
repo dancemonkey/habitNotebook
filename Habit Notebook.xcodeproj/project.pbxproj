@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1010D1F41C06DC4C00279517 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1010D1F31C06DC4C00279517 /* DataModel.swift */; };
 		1018AA6D1C0163FE0087F076 /* HabitPagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1018AA6C1C0163FE0087F076 /* HabitPagesViewController.swift */; };
 		10405B511BFC3C5D007C5B2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10405B501BFC3C5D007C5B2F /* AppDelegate.swift */; };
 		10405B531BFC3C5D007C5B2F /* HabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10405B521BFC3C5D007C5B2F /* HabitViewController.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1010D1F31C06DC4C00279517 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		1018AA6C1C0163FE0087F076 /* HabitPagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitPagesViewController.swift; sourceTree = "<group>"; };
 		10405B4D1BFC3C5D007C5B2F /* Habit Notebook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Habit Notebook.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		10405B501BFC3C5D007C5B2F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -81,9 +83,10 @@
 		10405B4F1BFC3C5D007C5B2F /* Habit Notebook */ = {
 			isa = PBXGroup;
 			children = (
-				10405B501BFC3C5D007C5B2F /* AppDelegate.swift */,
-				10405B521BFC3C5D007C5B2F /* HabitViewController.swift */,
 				10405B541BFC3C5D007C5B2F /* Main.storyboard */,
+				10405B501BFC3C5D007C5B2F /* AppDelegate.swift */,
+				1010D1F31C06DC4C00279517 /* DataModel.swift */,
+				10405B521BFC3C5D007C5B2F /* HabitViewController.swift */,
 				1018AA6C1C0163FE0087F076 /* HabitPagesViewController.swift */,
 				105BE1A71C02962300D8AB2A /* Habit.swift */,
 				10405B571BFC3C5D007C5B2F /* Assets.xcassets */,
@@ -203,6 +206,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1010D1F41C06DC4C00279517 /* DataModel.swift in Sources */,
 				1018AA6D1C0163FE0087F076 /* HabitPagesViewController.swift in Sources */,
 				10405B531BFC3C5D007C5B2F /* HabitViewController.swift in Sources */,
 				105BE1A81C02962300D8AB2A /* Habit.swift in Sources */,

@@ -6,25 +6,22 @@
 //  Copyright © 2015 Drew Lanning. All rights reserved.
 //
 
-// this will load an instance of each habitVC with each swipe.
-// initialize in its viewDidLoad at top of program, load first content VC and init data
+// each member VC must also write back to THIS data member...
+// then the data member HERE should write back to the datamodel when all is said and done
 
 import UIKit
 
 class HabitPagesViewController: UIPageViewController, UIPageViewControllerDataSource {
   
-  var testSourceArray = [Habit]()
+  var data = [Habit]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-      
-      // FAKE TEST DATA SO WE HAVE PAGES TO TURN IN THE INTERFACE
-      testSourceArray.append(Habit(name: "H1", unitName: "Quarts", unitTotal: 5))
-      testSourceArray.append(Habit(name: "H2", unitName: "Smokes", unitTotal: 1))
-      testSourceArray.append(Habit(name: "H3", unitName: "Laps", unitTotal: 1))
+      let dataModel = DataModel()
+      data = dataModel.getStoredData()
       
       dataSource = self
-      if testSourceArray.count > 0 {
+      if data.count > 0 {
         let startingControllers = [getItemController(0)!]
         setViewControllers(startingControllers, direction: .Forward, animated: false, completion: nil)
       }
@@ -42,9 +39,9 @@ class HabitPagesViewController: UIPageViewController, UIPageViewControllerDataSo
   }
   
   func getItemController(fromDataIndex: Int) -> HabitViewController? {
-    if testSourceArray.count >= fromDataIndex {
+    if data.count >= fromDataIndex {
       let newController = storyboard?.instantiateViewControllerWithIdentifier("HabitController") as! HabitViewController
-      newController.datasource = testSourceArray[fromDataIndex]
+      newController.datasource = data[fromDataIndex]
       newController.setItemIndex(fromDataIndex)
       return newController
     }
@@ -62,14 +59,14 @@ class HabitPagesViewController: UIPageViewController, UIPageViewControllerDataSo
   
   func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
     let itemController = viewController as! HabitViewController
-    if itemController.getItemIndex()+1 < testSourceArray.count {
+    if itemController.getItemIndex()+1 < data.count {
       return getItemController(itemController.getItemIndex()+1)
     }
     return nil
   }
   
   func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
-    return testSourceArray.count
+    return data.count
   }
   
   func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {

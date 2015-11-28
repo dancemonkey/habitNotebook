@@ -27,16 +27,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D6A-ok-AZ2">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D6A-ok-AZ2">
                                 <rect key="frame" x="175" y="175" width="250" height="250"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="Fh5-vr-RFP"/>
                                     <constraint firstAttribute="height" constant="250" id="Vdq-el-srN"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="37"/>
+                                <size key="titleShadowOffset" width="2.2250738585072014e-308" height="2.2250738585072014e-308"/>
                                 <state key="normal" title="done">
                                     <color key="titleColor" red="0.0" green="0.74390388259999995" blue="0.00022772667850000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <state key="selected">
+                                    <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -58,15 +62,15 @@
                                     <constraint firstAttribute="height" constant="44" id="DsL-LX-9Ly"/>
                                 </constraints>
                                 <items>
-                                    <barButtonItem title="Edit Habit" id="9nX-43-ypV">
+                                    <barButtonItem title="Edit Habit" style="plain" id="9nX-43-ypV">
                                         <color key="tintColor" red="0.60784313729999995" green="0.30196078430000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="osZ-sY-DWm"/>
-                                    <barButtonItem systemItem="add" id="K9B-yu-TyK">
+                                    <barButtonItem style="plain" systemItem="add" id="K9B-yu-TyK">
                                         <color key="tintColor" red="0.60784313729999995" green="0.30196078430000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="sQJ-h6-ARv"/>
-                                    <barButtonItem title="Progress" id="4gL-qI-T2e">
+                                    <barButtonItem title="Progress" style="plain" id="4gL-qI-T2e">
                                         <color key="tintColor" red="0.60784313725490191" green="0.30196078431372547" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </barButtonItem>
                                 </items>

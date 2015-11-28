@@ -15,7 +15,7 @@ enum HabitFrequency {
   case Custom
 }
 
-class Habit {
+class Habit: NSObject, NSCoding {
   var name: String
   var unitName: String?
   var unitTotal: Int?
@@ -34,6 +34,22 @@ class Habit {
     } else {
       self.unitTotal = 1
     }
+  }
+  
+  required init?(coder aDecoder: NSCoder) {
+    self.name = aDecoder.decodeObjectForKey("name") as! String
+    self.unitName = aDecoder.decodeObjectForKey("unitName") as! String!
+    self.unitTotal = aDecoder.decodeObjectForKey("unitTotal") as! Int!
+    self.dailyTotal = aDecoder.decodeObjectForKey("dailyTotal") as! Int
+    self.history = aDecoder.decodeObjectForKey("history") as! [[String:Int]]
+  }
+  
+  func encodeWithCoder(aCoder: NSCoder) {
+    aCoder.encodeObject(self.name, forKey: "name")
+    aCoder.encodeObject(self.unitName, forKey: "unitName")
+    aCoder.encodeObject(self.unitTotal, forKey: "unitTotal")
+    aCoder.encodeObject(self.dailyTotal, forKey: "dailyTotal")
+    aCoder.encodeObject(self.history, forKey: "history")
   }
   
   // THIS SHOULD BE CALLED ONCE PER DAY FOR ALL HABITS IF THE LAST TIME THE APP OPENED WAS BEFORE MIDNIGHT

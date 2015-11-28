@@ -12,6 +12,7 @@ class HabitViewController: UIViewController {
   
   var habit: Habit!
   let now = NSDate()
+  var saveDelegate: SaveDataDelegate!
   private var itemIndex: Int!
   
   @IBOutlet weak var habitName: UILabel!
@@ -24,6 +25,7 @@ class HabitViewController: UIViewController {
   @IBAction func performedHabit(sender: UIButton) {
     habit.addToDailyTotal(habit.unitTotal!)
     total = habit.getTotalForToday()
+    saveDelegate.saveData()
   }
   
   

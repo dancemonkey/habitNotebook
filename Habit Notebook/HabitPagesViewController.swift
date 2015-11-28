@@ -6,17 +6,19 @@
 //  Copyright © 2015 Drew Lanning. All rights reserved.
 //
 
-// the data member HERE should write back to the datamodel when all is said and done
+protocol SaveDataDelegate {
+  func saveData()
+}
 
 import UIKit
 
-class HabitPagesViewController: UIPageViewController, UIPageViewControllerDataSource {
+class HabitPagesViewController: UIPageViewController, UIPageViewControllerDataSource, SaveDataDelegate {
   
   var data = [Habit]()
+  let dataModel = DataModel()
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    let dataModel = DataModel()
     data = dataModel.getStoredData()
     
     dataSource = self
@@ -42,6 +44,7 @@ class HabitPagesViewController: UIPageViewController, UIPageViewControllerDataSo
       let newController = storyboard?.instantiateViewControllerWithIdentifier("HabitController") as! HabitViewController
       newController.habit = data[fromDataIndex]
       newController.setItemIndex(fromDataIndex)
+      newController.saveDelegate = self
       return newController
     }
     return nil
@@ -70,6 +73,10 @@ class HabitPagesViewController: UIPageViewController, UIPageViewControllerDataSo
   
   func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
     return 0
+  }
+  
+  func saveData() {
+    dataModel.saveThis(data: data)
   }
   
   // DEBUG METHOD

@@ -6,7 +6,6 @@
 //  Copyright © 2015 Drew Lanning. All rights reserved.
 //
 
-// this will also need to record the data back to the PageVC so that it remains up to date.
 // right now when swiping back and forth it's fetching new blank data each time
 
 import UIKit
@@ -14,7 +13,6 @@ import UIKit
 class HabitViewController: UIViewController {
   
   var habit: Habit!
-  var datasource: Habit!
   let now = NSDate()
   private var itemIndex: Int!
   
@@ -37,9 +35,6 @@ class HabitViewController: UIViewController {
   
   override func viewWillAppear(animated: Bool) {
     super.viewWillAppear(true)
-    
-    self.habit = Habit(name: datasource.name, unitName: datasource.unitName, unitTotal: datasource.unitTotal)
-    
     habitName.text = habit.name
     total = habit.getTotalForToday()
   }

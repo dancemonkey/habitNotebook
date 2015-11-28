@@ -6,7 +6,6 @@
 //  Copyright © 2015 Drew Lanning. All rights reserved.
 //
 
-// each member VC must also write back to THIS data member...
 // then the data member HERE should write back to the datamodel when all is said and done
 
 import UIKit
@@ -15,22 +14,22 @@ class HabitPagesViewController: UIPageViewController, UIPageViewControllerDataSo
   
   var data = [Habit]()
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-      let dataModel = DataModel()
-      data = dataModel.getStoredData()
-      
-      dataSource = self
-      if data.count > 0 {
-        let startingControllers = [getItemController(0)!]
-        setViewControllers(startingControllers, direction: .Forward, animated: false, completion: nil)
-      }
-      setAppearance()
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    let dataModel = DataModel()
+    data = dataModel.getStoredData()
+    
+    dataSource = self
+    if data.count > 0 {
+      let startingControllers = [getItemController(0)!]
+      setViewControllers(startingControllers, direction: .Forward, animated: false, completion: nil)
     }
+    setAppearance()
+  }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
+  override func didReceiveMemoryWarning() {
+      super.didReceiveMemoryWarning()
+  }
   
   func setAppearance() {
     let appearance = UIPageControl.appearance()
@@ -41,7 +40,7 @@ class HabitPagesViewController: UIPageViewController, UIPageViewControllerDataSo
   func getItemController(fromDataIndex: Int) -> HabitViewController? {
     if data.count >= fromDataIndex {
       let newController = storyboard?.instantiateViewControllerWithIdentifier("HabitController") as! HabitViewController
-      newController.datasource = data[fromDataIndex]
+      newController.habit = data[fromDataIndex]
       newController.setItemIndex(fromDataIndex)
       return newController
     }
@@ -71,6 +70,14 @@ class HabitPagesViewController: UIPageViewController, UIPageViewControllerDataSo
   
   func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
     return 0
+  }
+  
+  // DEBUG METHOD
+  func printDataContents() {
+    for item in data {
+      print(item.name)
+      print(item.getTotalForToday())
+    }
   }
 
     /*

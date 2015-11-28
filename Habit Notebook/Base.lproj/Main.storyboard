@@ -58,15 +58,17 @@
                                     <constraint firstAttribute="height" constant="44" id="DsL-LX-9Ly"/>
                                 </constraints>
                                 <items>
-                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="HEa-R2-qMB"/>
                                     <barButtonItem title="Edit Habit" id="9nX-43-ypV">
+                                        <color key="tintColor" red="0.60784313729999995" green="0.30196078430000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="osZ-sY-DWm"/>
+                                    <barButtonItem systemItem="add" id="K9B-yu-TyK">
                                         <color key="tintColor" red="0.60784313729999995" green="0.30196078430000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="sQJ-h6-ARv"/>
                                     <barButtonItem title="Progress" id="4gL-qI-T2e">
                                         <color key="tintColor" red="0.60784313725490191" green="0.30196078431372547" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </barButtonItem>
-                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="Rxa-OO-Nyz"/>
                                 </items>
                                 <color key="barTintColor" red="1" green="0.49803921568627452" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </toolbar>

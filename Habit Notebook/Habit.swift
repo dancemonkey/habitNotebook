@@ -20,7 +20,7 @@ class Habit {
   var unitName: String?
   var unitTotal: Int?
   private var dailyTotal = 0
-  private var history = [[NSDate: Int]]()
+  private var history = [[String: Int]]()
   
   init(name: String, unitName: String?, unitTotal: Int?) {
     self.name = name
@@ -38,7 +38,7 @@ class Habit {
   
   // THIS SHOULD BE CALLED ONCE PER DAY FOR ALL HABITS IF THE LAST TIME THE APP OPENED WAS BEFORE MIDNIGHT
   // SHOULD ALSO SAVE TO COREDATA OR SETTINGS WHENEVER THE APP OPENS OR CLOSES (PUT IN ANOTHER FUNCTION)
-  func save(todayToHistory currentTotal: Int, forDate date: NSDate) {
+  func save(todayToHistory currentTotal: Int, forDate date: String) {
     history.append([date: currentTotal])
     clearDailyTotal()
   }
@@ -55,10 +55,10 @@ class Habit {
     return dailyTotal
   }
   
-  func getTotalFor(date searchDate: NSDate) -> Int? {
+  func getTotalFor(date searchDate: String) -> Int? {
     for entry in history {
       for (date,total) in entry {
-        if date.isEqualToDate(searchDate) {
+        if date == searchDate {
           return total
         }
       }

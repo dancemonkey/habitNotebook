@@ -6,8 +6,6 @@
 //  Copyright © 2015 Drew Lanning. All rights reserved.
 //
 
-// right now when swiping back and forth it's fetching new blank data each time
-
 import UIKit
 
 class HabitViewController: UIViewController {
@@ -20,7 +18,7 @@ class HabitViewController: UIViewController {
   @IBOutlet weak var habitInfo: UILabel!
   var total: Int! {
     didSet {
-      habitInfo.text = "\(now)" + "\n" + "\(habit.unitName!) - \(total)"
+      habitInfo.text = "\(getCurrentFormattedDate())" + "\n" + "\(habit.unitName!) - \(total)"
     }
   }
   @IBAction func performedHabit(sender: UIButton) {
@@ -50,6 +48,13 @@ class HabitViewController: UIViewController {
   
   func getItemIndex() -> Int {
     return itemIndex
+  }
+  
+  func getCurrentFormattedDate() -> String {
+    let dateFormatter = NSDateFormatter()
+    dateFormatter.dateStyle = .FullStyle
+    dateFormatter.timeStyle = .NoStyle
+    return dateFormatter.stringFromDate(now)
   }
 
 }

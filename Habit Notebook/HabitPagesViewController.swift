@@ -6,7 +6,7 @@
 //  Copyright © 2015 Drew Lanning. All rights reserved.
 //
 
-// then the data member HERE should write back to the datamodel when all is said and done
+// the data member HERE should write back to the datamodel when all is said and done
 
 import UIKit
 

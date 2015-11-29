@@ -18,7 +18,7 @@ enum HabitFrequency {
 class Habit: NSObject, NSCoding {
   var name: String
   var unitName: String?
-  var unitTotal: Int?
+  var unitSize: Int?
   private var dailyTotal = 0
   private var history = [[String: Int]]()
   
@@ -30,16 +30,16 @@ class Habit: NSObject, NSCoding {
       self.unitName = "Times"
     }
     if let uTotal = unitTotal {
-      self.unitTotal = uTotal
+      self.unitSize = uTotal
     } else {
-      self.unitTotal = 1
+      self.unitSize = 1
     }
   }
   
   required init?(coder aDecoder: NSCoder) {
     self.name = aDecoder.decodeObjectForKey("name") as! String
     self.unitName = aDecoder.decodeObjectForKey("unitName") as! String!
-    self.unitTotal = aDecoder.decodeObjectForKey("unitTotal") as! Int!
+    self.unitSize = aDecoder.decodeObjectForKey("unitSize") as! Int!
     self.dailyTotal = aDecoder.decodeObjectForKey("dailyTotal") as! Int
     self.history = aDecoder.decodeObjectForKey("history") as! [[String:Int]]
   }
@@ -47,7 +47,7 @@ class Habit: NSObject, NSCoding {
   func encodeWithCoder(aCoder: NSCoder) {
     aCoder.encodeObject(self.name, forKey: "name")
     aCoder.encodeObject(self.unitName, forKey: "unitName")
-    aCoder.encodeObject(self.unitTotal, forKey: "unitTotal")
+    aCoder.encodeObject(self.unitSize, forKey: "unitSize")
     aCoder.encodeObject(self.dailyTotal, forKey: "dailyTotal")
     aCoder.encodeObject(self.history, forKey: "history")
   }

@@ -19,9 +19,7 @@ class DataModel {
       storage = NSKeyedUnarchiver.unarchiveObjectWithData(storedData) as! [Habit]
     } else {
       // FAKE TEST DATA SO WE HAVE PAGES TO TURN IN THE INTERFACE, UNTIL I SET UP A WAY TO ADD CUSTOM DATA
-      storage.append(Habit(name: "H1", unitName: "Quarts", unitTotal: 5))
-      storage.append(Habit(name: "H2", unitName: "Smokes", unitTotal: 1))
-      storage.append(Habit(name: "H3", unitName: "Laps", unitTotal: 1))
+      storage.append(Habit(name: "Track New Habit", unitName: "Units", unitTotal: nil))
     }
   }
   

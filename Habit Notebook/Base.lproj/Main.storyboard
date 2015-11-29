@@ -40,7 +40,13 @@
                                     <color key="titleColor" red="0.0" green="0.74390388259999995" blue="0.00022772667850000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <state key="selected">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <state key="highlighted">
                                     <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <state key="focused">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -62,19 +68,19 @@
                                     <constraint firstAttribute="height" constant="44" id="DsL-LX-9Ly"/>
                                 </constraints>
                                 <items>
-                                    <barButtonItem title="Edit Habit" style="plain" id="9nX-43-ypV">
+                                    <barButtonItem title="Add New Habit" style="plain" id="9nX-43-ypV">
                                         <color key="tintColor" red="0.60784313729999995" green="0.30196078430000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="osZ-sY-DWm"/>
-                                    <barButtonItem style="plain" systemItem="add" id="K9B-yu-TyK">
-                                        <color key="tintColor" red="0.60784313729999995" green="0.30196078430000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="sQJ-h6-ARv"/>
                                     <barButtonItem title="Progress" style="plain" id="4gL-qI-T2e">
                                         <color key="tintColor" red="0.60784313725490191" green="0.30196078431372547" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="showProgress:" destination="BYZ-38-t0r" id="BxX-eP-tgE"/>
+                                        </connections>
                                     </barButtonItem>
                                 </items>
-                                <color key="barTintColor" red="1" green="0.49803921568627452" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="barTintColor" red="1" green="0.49019607843137253" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </toolbar>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Motivational phrases and things that pop up at random each time you tap the button or complete a milestone." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V62-30-wni">
                                 <rect key="frame" x="20" y="428" width="560" height="128"/>
@@ -121,10 +127,12 @@
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="V62-30-wni" secondAttribute="trailing" id="ANR-zs-woe"/>
                             <constraint firstItem="D6A-ok-AZ2" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="EGM-Fh-REP"/>
+                            <constraint firstItem="V62-30-wni" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IEb-l9-I0C"/>
                             <constraint firstAttribute="trailingMargin" secondItem="suc-Us-BkX" secondAttribute="trailing" constant="-20" id="Imu-DK-e9q"/>
                             <constraint firstItem="zsB-z3-cDC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="K9t-xO-D5H"/>
                             <constraint firstItem="suc-Us-BkX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="O3S-5J-AZm"/>
                             <constraint firstItem="suc-Us-BkX" firstAttribute="top" secondItem="V62-30-wni" secondAttribute="bottom" id="WCV-cL-FJW"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="V62-30-wni" secondAttribute="bottom" constant="44" id="ZNN-ba-QqL"/>
                             <constraint firstItem="zsB-z3-cDC" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Zcd-eu-OUG"/>
                             <constraint firstItem="V62-30-wni" firstAttribute="centerX" secondItem="suc-Us-BkX" secondAttribute="centerX" id="aLM-yL-xM0"/>
                             <constraint firstItem="suc-Us-BkX" firstAttribute="top" secondItem="V62-30-wni" secondAttribute="bottom" id="bhN-9w-E9b"/>
@@ -137,10 +145,10 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="oNp-nG-iig"/>
-                                <exclude reference="cQ8-Bk-DG7"/>
                                 <exclude reference="bhN-9w-E9b"/>
                                 <exclude reference="zLE-Rp-yZx"/>
+                                <exclude reference="oNp-nG-iig"/>
+                                <exclude reference="cQ8-Bk-DG7"/>
                             </mask>
                         </variation>
                     </view>

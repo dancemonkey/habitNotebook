@@ -10,11 +10,18 @@ import UIKit
 
 class HabitViewController: UIViewController {
   
+  // PROPERTIES
   var habit: Habit!
   let now = NSDate()
   var saveDelegate: SaveDataDelegate!
   private var itemIndex: Int!
   
+  // BOTTOM CONTROL BAR ITEMS
+  @IBAction func showProgress(sender: UIBarButtonItem) {
+    print("showing progress")
+  }
+  
+  // LABELS
   @IBOutlet weak var habitName: UILabel!
   @IBOutlet weak var habitInfo: UILabel!
   var total: Int! {
@@ -22,8 +29,10 @@ class HabitViewController: UIViewController {
       habitInfo.text = "\(getCurrentFormattedDate())" + "\n" + "\(habit.unitName!) - \(total)"
     }
   }
+  
+  // THE BIG MAIN BUTTON
   @IBAction func performedHabit(sender: UIButton) {
-    habit.addToDailyTotal(habit.unitTotal!)
+    habit.addToDailyTotal(habit.unitSize!)
     total = habit.getTotalForToday()
     saveDelegate.saveData()
   }

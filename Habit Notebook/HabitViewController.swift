@@ -6,6 +6,9 @@
 //  Copyright © 2015 Drew Lanning. All rights reserved.
 //
 
+// include double-tap to edit items on habit screen
+// get rid of status bar in IB and have buttons show in pageVC status bar
+
 import UIKit
 
 class HabitViewController: UIViewController {
@@ -23,10 +26,16 @@ class HabitViewController: UIViewController {
   
   // LABELS
   @IBOutlet weak var habitName: UILabel!
+  @IBAction func editHabitName(sender: UITapGestureRecognizer) {
+    editLabel(withText: habitName.text!, forLabel: habitName)
+  }
   @IBOutlet weak var habitInfo: UILabel!
+  @IBAction func editUnitInfo(sender: UITapGestureRecognizer) {
+    print("editing unit info")
+  }
   var total: Int! {
     didSet {
-      habitInfo.text = "\(getCurrentFormattedDate())" + "\n" + "\(habit.unitName!) - \(total)"
+      habitInfo.text = "\(getCurrentFormattedDate())" + "\n \n" + "\(habit.unitName!) - \(total)"
     }
   }
   
@@ -67,6 +76,16 @@ class HabitViewController: UIViewController {
     dateFormatter.timeStyle = .NoStyle
     return dateFormatter.stringFromDate(now)
   }
-
+  
+  func editLabel(withText text: String, forLabel label: UILabel) {
+    let newTextBox = UITextField()
+    newTextBox.text = text
+    newTextBox.frame = label.frame
+    newTextBox.textAlignment = label.textAlignment
+    newTextBox.font = label.font
+    newTextBox.userInteractionEnabled = true
+    view.addSubview(newTextBox)
+    print("\(label.frame) " + "\(newTextBox.frame)")
+  }
 }
 

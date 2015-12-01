@@ -45,9 +45,21 @@ class HabitPagesViewController: UIPageViewController, UIPageViewControllerDataSo
       newController.habit = data[fromDataIndex]
       newController.setItemIndex(fromDataIndex)
       newController.saveDelegate = self
+      self.navigationItem.title = newController.habit.name
+      navigationController?.navigationBar.tintColor = UIColor(red: 155/255, green: 77/255, blue: 0.0, alpha: 1.0)
+      addNewItemBarButton()
       return newController
     }
     return nil
+  }
+  
+  func addNewItemBarButton() {
+    let button = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "addNewHabit")
+    navigationItem.rightBarButtonItem = button
+  }
+  
+  func addNewHabit() {
+    print("adding new habit")
   }
   
   func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
@@ -57,7 +69,6 @@ class HabitPagesViewController: UIPageViewController, UIPageViewControllerDataSo
     }
     return nil
   }
-  
   
   func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
     let itemController = viewController as! HabitViewController
@@ -82,8 +93,7 @@ class HabitPagesViewController: UIPageViewController, UIPageViewControllerDataSo
   // DEBUG METHOD
   func printDataContents() {
     for item in data {
-      print(item.name)
-      print(item.getTotalForToday())
+      print(item.getHistory())
     }
   }
 

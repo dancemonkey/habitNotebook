@@ -20,7 +20,7 @@ class Habit: NSObject, NSCoding {
   var unitName: String?
   var unitSize: Int?
   private var dailyTotal = 0
-  private var history = [[String: Int]]()
+  private var history = [String: Int]()
   
   init(name: String, unitName: String?, unitTotal: Int?) {
     self.name = name
@@ -41,7 +41,7 @@ class Habit: NSObject, NSCoding {
     self.unitName = aDecoder.decodeObjectForKey("unitName") as! String!
     self.unitSize = aDecoder.decodeObjectForKey("unitSize") as! Int!
     self.dailyTotal = aDecoder.decodeObjectForKey("dailyTotal") as! Int
-    self.history = aDecoder.decodeObjectForKey("history") as! [[String:Int]]
+    self.history = aDecoder.decodeObjectForKey("history") as! [String:Int]
   }
   
   func encodeWithCoder(aCoder: NSCoder) {
@@ -55,7 +55,7 @@ class Habit: NSObject, NSCoding {
   // THIS SHOULD BE CALLED ONCE PER DAY FOR ALL HABITS IF THE LAST TIME THE APP OPENED WAS BEFORE MIDNIGHT
   // SHOULD ALSO SAVE TO COREDATA OR SETTINGS WHENEVER THE APP OPENS OR CLOSES (PUT IN ANOTHER FUNCTION)
   func save(todayToHistory currentTotal: Int, forDate date: String) {
-    history.append([date: currentTotal])
+    history[date] = currentTotal
     clearDailyTotal()
   }
   
@@ -71,14 +71,14 @@ class Habit: NSObject, NSCoding {
     return dailyTotal
   }
   
+  func getHistory() -> [String: Int] {
+    return history
+  }
+  
   func getTotalFor(date searchDate: String) -> Int? {
-    for entry in history {
-      for (date,total) in entry {
-        if date == searchDate {
-          return total
-        }
-      }
+    guard let result = history[searchDate] else {
+      return nil
     }
-    return nil
+    return result
   }
 }

@@ -23,9 +23,10 @@ class HabitViewController: UIViewController {
   @IBAction func showProgress(sender: UIBarButtonItem) {
     print("showing progress")
   }
+  @IBAction func addNewHabit(sender: UIBarButtonItem) {
+  }
   
   // LABELS
-  @IBOutlet weak var habitName: UILabel!
   @IBOutlet weak var habitInfo: UILabel!
   var total: Int! {
     didSet {
@@ -43,14 +44,12 @@ class HabitViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    habit.save(todayToHistory: habit.getTotalForToday(), forDate: getCurrentFormattedDate())
-    print(habit.getTotalFor(date: getCurrentFormattedDate()))
   }
   
   override func viewWillAppear(animated: Bool) {
     super.viewWillAppear(true)
-    habitName.text = habit.name
     total = habit.getTotalForToday()
+    
   }
 
   override func didReceiveMemoryWarning() {

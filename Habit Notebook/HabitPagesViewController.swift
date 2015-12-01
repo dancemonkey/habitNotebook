@@ -59,7 +59,8 @@ class HabitPagesViewController: UIPageViewController, UIPageViewControllerDataSo
   }
   
   func addNewHabit() {
-    print("adding new habit")
+    let addHabitVC = storyboard?.instantiateViewControllerWithIdentifier("AddNew")
+    navigationController?.pushViewController(addHabitVC!, animated: true)
   }
   
   func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {

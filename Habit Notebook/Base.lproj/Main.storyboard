@@ -7,10 +7,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--hi-->
+        <!--Habit Pages View Controller-->
         <scene sceneID="Wls-lU-fIH">
             <objects>
-                <pageViewController storyboardIdentifier="PageController" autoresizesArchivedViewToFullSize="NO" title="hi" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="na3-6A-zsb" customClass="HabitPagesViewController" customModule="Habit_Notebook" customModuleProvider="target" sceneMemberID="viewController">
+                <pageViewController storyboardIdentifier="PageController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="na3-6A-zsb" customClass="HabitPagesViewController" customModule="Habit_Notebook" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="zhK-0a-bvA"/>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cWl-ES-CyV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -157,7 +157,7 @@
         <!--Edit Habit-->
         <scene sceneID="yTB-Ac-SQ8">
             <objects>
-                <viewController title="Edit Habit" id="25T-bB-cPT" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Edit" title="Edit Habit" id="25T-bB-cPT" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QZf-bM-fb8"/>
                         <viewControllerLayoutGuide type="bottom" id="4gJ-bQ-Sux"/>
@@ -189,7 +189,7 @@
         <!--Add New Habit-->
         <scene sceneID="aFk-2K-FEk">
             <objects>
-                <viewController title="Add New Habit" id="ZAA-eP-8fb" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddNew" title="Add New Habit" id="ZAA-eP-8fb" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LfZ-tR-thl"/>
                         <viewControllerLayoutGuide type="bottom" id="lK9-fZ-91k"/>
@@ -197,8 +197,21 @@
                     <view key="view" contentMode="scaleToFill" id="OPY-em-FNN">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adding One" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ui-NK-Ewm">
+                                <rect key="frame" x="255" y="289" width="90" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2Ui-NK-Ewm" firstAttribute="centerY" secondItem="OPY-em-FNN" secondAttribute="centerY" id="83i-nQ-Efo"/>
+                            <constraint firstItem="2Ui-NK-Ewm" firstAttribute="centerX" secondItem="OPY-em-FNN" secondAttribute="centerX" id="e2x-Rr-wNo"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EbI-Da-jW4" userLabel="First Responder" sceneMemberID="firstResponder"/>

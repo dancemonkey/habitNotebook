@@ -26,13 +26,7 @@ class HabitViewController: UIViewController {
   
   // LABELS
   @IBOutlet weak var habitName: UILabel!
-  @IBAction func editHabitName(sender: UITapGestureRecognizer) {
-    editLabel(withText: habitName.text!, forLabel: habitName)
-  }
   @IBOutlet weak var habitInfo: UILabel!
-  @IBAction func editUnitInfo(sender: UITapGestureRecognizer) {
-    print("editing unit info")
-  }
   var total: Int! {
     didSet {
       habitInfo.text = "\(getCurrentFormattedDate())" + "\n \n" + "\(habit.unitName!) - \(total)"
@@ -49,6 +43,8 @@ class HabitViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    habit.save(todayToHistory: habit.getTotalForToday(), forDate: getCurrentFormattedDate())
+    print(habit.getTotalFor(date: getCurrentFormattedDate()))
   }
   
   override func viewWillAppear(animated: Bool) {

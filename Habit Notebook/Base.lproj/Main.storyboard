@@ -99,7 +99,7 @@
                                     </mask>
                                 </variation>
                             </textView>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="zsB-z3-cDC">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="zsB-z3-cDC">
                                 <rect key="frame" x="151" y="20" width="298" height="108"/>
                                 <subviews>
                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Habit Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Plu-JB-Bsz">
@@ -109,11 +109,8 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                         <nil key="highlightedColor"/>
                                         <size key="shadowOffset" width="0.0" height="0.0"/>
-                                        <connections>
-                                            <outletCollection property="gestureRecognizers" destination="yeh-PW-Npd" appends="YES" id="z5H-QH-ROs"/>
-                                        </connections>
                                     </label>
-                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="1" verticalHuggingPriority="1" misplaced="YES" text="Basic statistical info about habit data. I.E. completed 6 times in the last 2 days." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N5T-43-sdt">
+                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="1" verticalHuggingPriority="1" text="Basic statistical info about habit data. I.E. completed 6 times in the last 2 days." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N5T-43-sdt">
                                         <rect key="frame" x="0.0" y="72" width="298" height="36"/>
                                         <animations/>
                                         <gestureRecognizers/>
@@ -123,9 +120,6 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
-                                        <connections>
-                                            <outletCollection property="gestureRecognizers" destination="DRO-dd-LDc" appends="YES" id="gKu-Bg-NEK"/>
-                                        </connections>
                                     </label>
                                 </subviews>
                                 <animations/>
@@ -168,16 +162,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="yeh-PW-Npd" userLabel="Edit Habit Name">
-                    <connections>
-                        <action selector="editHabitName:" destination="BYZ-38-t0r" id="2cd-EO-xET"/>
-                    </connections>
-                </tapGestureRecognizer>
-                <tapGestureRecognizer id="DRO-dd-LDc" userLabel="Edit Habit Unit Info">
-                    <connections>
-                        <action selector="editUnitInfo:" destination="BYZ-38-t0r" id="Lx9-CI-eXE"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="305" y="387"/>
         </scene>

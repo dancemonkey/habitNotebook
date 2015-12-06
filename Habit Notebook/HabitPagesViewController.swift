@@ -31,7 +31,8 @@ class HabitPagesViewController: UIPageViewController, UIPageViewControllerDataSo
   }
   
   override func viewDidAppear(animated: Bool) {
-    <#code#>
+    let startingControllers = [getItemController(0)!]
+    setViewControllers(startingControllers, direction: .Forward, animated: false, completion: nil)
   }
 
   override func didReceiveMemoryWarning() {

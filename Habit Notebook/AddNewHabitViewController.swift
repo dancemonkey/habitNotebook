@@ -19,6 +19,7 @@ class AddNewHabitViewController: UIViewController {
   @IBAction func addHabit(sender: UIButton) {
     if habitName.text != "" && habitUnitName.text != "" {
       saveDelegate.addNewPage(forHabit: Habit(name: habitName.text!, unitName: habitUnitName.text!, unitTotal: nil))
+      saveDelegate.saveData()
       navigationController?.popViewControllerAnimated(true)
     }
   }

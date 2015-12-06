@@ -186,10 +186,10 @@
             </objects>
             <point key="canvasLocation" x="1861" y="389"/>
         </scene>
-        <!--Add New Habit-->
+        <!--Add New-->
         <scene sceneID="aFk-2K-FEk">
             <objects>
-                <viewController storyboardIdentifier="AddNew" title="Add New Habit" id="ZAA-eP-8fb" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddNew" title="Add New" id="ZAA-eP-8fb" customClass="AddNewHabitViewController" customModule="Habit_Notebook" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LfZ-tR-thl"/>
                         <viewControllerLayoutGuide type="bottom" id="lK9-fZ-91k"/>
@@ -205,38 +205,41 @@
                                     <constraint firstAttribute="width" constant="75" id="Sr5-TZ-Ksz"/>
                                 </constraints>
                                 <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="addHabit:" destination="ZAA-eP-8fb" eventType="touchUpInside" id="Vg4-YE-tKG"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="SiE-vF-rgw">
-                                <rect key="frame" x="163" y="203" width="275" height="195"/>
+                                <rect key="frame" x="173" y="28" width="254" height="195"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What's the habit?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T7D-Ud-2rl">
-                                        <rect key="frame" x="0.0" y="0.0" width="275" height="21"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="254" height="21"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="smoking / drinking water / push-ups" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GzE-aF-TbC">
-                                        <rect key="frame" x="0.0" y="39" width="275" height="30"/>
+                                        <rect key="frame" x="0.0" y="39" width="254" height="30"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What units are we tracking?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VVE-kp-EUO">
-                                        <rect key="frame" x="0.0" y="87" width="275" height="21"/>
+                                        <rect key="frame" x="0.0" y="87" width="254" height="21"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="cigarettes / quarts / reps" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BwV-Wa-V8Z">
-                                        <rect key="frame" x="0.0" y="126" width="275" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="# of cigarettes / quarts / reps" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BwV-Wa-V8Z">
+                                        <rect key="frame" x="0.0" y="126" width="254" height="30"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is this a good or a bad habit?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7M6-Yp-ffr">
-                                        <rect key="frame" x="0.0" y="174" width="275" height="21"/>
+                                        <rect key="frame" x="0.0" y="174" width="254" height="21"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -244,12 +247,9 @@
                                     </label>
                                 </subviews>
                                 <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="275" id="6uA-b9-BG8"/>
-                                </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="100" verticalHuggingPriority="100" distribution="equalCentering" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="apj-RG-bUq">
-                                <rect key="frame" x="207" y="416" width="187" height="31"/>
+                                <rect key="frame" x="207" y="241" width="187" height="31"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="100" verticalHuggingPriority="100" text="Good" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Txh-RG-Zlv">
                                         <rect key="frame" x="0.0" y="5" width="42" height="21"/>
@@ -258,9 +258,10 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="100" verticalHuggingPriority="100" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yTY-7x-3nm">
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="100" verticalHuggingPriority="100" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="yTY-7x-3nm">
                                         <rect key="frame" x="72" y="0.0" width="51" height="31"/>
                                         <animations/>
+                                        <color key="onTintColor" red="1" green="0.13898010890000001" blue="0.1566192927" alpha="1" colorSpace="calibratedRGB"/>
                                     </switch>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="101" verticalHuggingPriority="101" text="Bad" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gwx-Aj-zwd">
                                         <rect key="frame" x="157" y="5" width="30" height="21"/>
@@ -276,15 +277,20 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="SiE-vF-rgw" firstAttribute="centerY" secondItem="OPY-em-FNN" secondAttribute="centerY" id="2bO-IM-oS1"/>
-                            <constraint firstItem="apj-RG-bUq" firstAttribute="centerX" secondItem="SiE-vF-rgw" secondAttribute="centerX" id="MfS-cr-isA"/>
+                            <constraint firstItem="SiE-vF-rgw" firstAttribute="centerX" secondItem="OPY-em-FNN" secondAttribute="centerX" id="Gwq-Kr-CSh"/>
+                            <constraint firstItem="SiE-vF-rgw" firstAttribute="top" secondItem="LfZ-tR-thl" secondAttribute="bottom" constant="8" id="Rtf-kW-VAu"/>
                             <constraint firstAttribute="bottom" secondItem="QCH-Tm-27f" secondAttribute="bottom" constant="20" symbolic="YES" id="XX0-RZ-TYh"/>
                             <constraint firstItem="QCH-Tm-27f" firstAttribute="centerX" secondItem="OPY-em-FNN" secondAttribute="centerX" id="Yv1-si-PPh"/>
                             <constraint firstItem="QCH-Tm-27f" firstAttribute="top" secondItem="LfZ-tR-thl" secondAttribute="bottom" constant="485" id="eUr-ZO-pWu"/>
-                            <constraint firstItem="apj-RG-bUq" firstAttribute="top" secondItem="SiE-vF-rgw" secondAttribute="bottom" constant="18" id="moy-Xt-RJO"/>
-                            <constraint firstItem="SiE-vF-rgw" firstAttribute="centerX" secondItem="OPY-em-FNN" secondAttribute="centerX" id="yaa-X2-Sac"/>
+                            <constraint firstItem="apj-RG-bUq" firstAttribute="centerX" secondItem="SiE-vF-rgw" secondAttribute="centerX" id="fMm-Pd-liw"/>
+                            <constraint firstItem="apj-RG-bUq" firstAttribute="top" secondItem="SiE-vF-rgw" secondAttribute="bottom" constant="18" id="xNW-S3-DQz"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="goodOrBadHabit" destination="yTY-7x-3nm" id="1NS-e1-eu5"/>
+                        <outlet property="habitName" destination="GzE-aF-TbC" id="1et-dW-QQw"/>
+                        <outlet property="habitUnitName" destination="BwV-Wa-V8Z" id="VoS-ii-qki"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EbI-Da-jW4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

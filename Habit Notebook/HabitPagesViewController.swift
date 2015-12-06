@@ -8,6 +8,7 @@
 
 protocol SaveDataDelegate {
   func saveData()
+  func addNewPage(forHabit habit: Habit)
 }
 
 import UIKit
@@ -27,6 +28,10 @@ class HabitPagesViewController: UIPageViewController, UIPageViewControllerDataSo
       setViewControllers(startingControllers, direction: .Forward, animated: false, completion: nil)
     }
     setAppearance()
+  }
+  
+  override func viewDidAppear(animated: Bool) {
+    <#code#>
   }
 
   override func didReceiveMemoryWarning() {
@@ -59,8 +64,13 @@ class HabitPagesViewController: UIPageViewController, UIPageViewControllerDataSo
   }
   
   func addNewHabit() {
-    let addHabitVC = storyboard?.instantiateViewControllerWithIdentifier("AddNew")
-    navigationController?.pushViewController(addHabitVC!, animated: true)
+    let addHabitVC = storyboard?.instantiateViewControllerWithIdentifier("AddNew") as! AddNewHabitViewController
+    addHabitVC.saveDelegate = self
+    navigationController?.pushViewController(addHabitVC, animated: true)
+  }
+  
+  func addNewPage(forHabit habit: Habit) {
+    data.append(habit)
   }
   
   func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {

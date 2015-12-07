@@ -19,8 +19,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Override point for customization after application launch.
     
     // COMPARE THE TWO BELOW IF THEY ARE WORKING CORRECTLY, AND THEN ARCHIVE IF PRIOR LAUNCH IS DIFF DATE THAN CURRENT
-    getPriorLaunchDate()
-    saveCurrentLaunchDate()
+    let priorLaunch = getPriorLaunchDate()
+    let currentLaunch = saveCurrentLaunchDate()
+    
+    guard priorLaunch != nil else {
+      return true
+    }
+    
+    if priorLaunch < currentLaunch {
+      print("you should be archiving all habits now")
+      print(priorLaunch)
+    } else if priorLaunch == currentLaunch {
+      print("it's the same day, no archiving")
+    }
     
     return true
   }
@@ -48,10 +59,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   }
   
   func getPriorLaunchDate() -> String? {
-    guard let priorLaunch = defaults.objectForKey("lastLaunch")  else {
+    guard let priorLaunch = defaults.objectForKey("lastLaunch") else {
       return nil
     }
-    print("prior launch date - \(priorLaunch)")
     return priorLaunch as? String
   }
 
@@ -62,7 +72,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     dateFormatter.timeStyle = .NoStyle
     let justLaunchDate = dateFormatter.stringFromDate(launchTime)
     defaults.setObject(justLaunchDate, forKey: "lastLaunch")
-    print("saved launch date - \(justLaunchDate)")
     return justLaunchDate
   }
 

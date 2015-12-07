@@ -13,18 +13,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
   let defaults = NSUserDefaults.standardUserDefaults()
+  var launchTime: NSDate!
 
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     // Override point for customization after application launch.
     
-    // Save prior launch date
-    // Compare prior launch to current launch, archive data if prior launch is from prior date
-    // For now this is just testing out using dates
-    let launchTime = NSDate()
-    let dateFormatter = NSDateFormatter()
-    dateFormatter.dateStyle = .ShortStyle
-    dateFormatter.timeStyle = .NoStyle
-    print(dateFormatter.stringFromDate(launchTime))
+    // COMPARE THE TWO BELOW IF THEY ARE WORKING CORRECTLY, AND THEN ARCHIVE IF PRIOR LAUNCH IS DIFF DATE THAN CURRENT
+    getPriorLaunchDate()
+    saveCurrentLaunchDate()
+    
     return true
   }
 
@@ -36,7 +33,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func applicationDidEnterBackground(application: UIApplication) {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-
   }
 
   func applicationWillEnterForeground(application: UIApplication) {
@@ -50,7 +46,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func applicationWillTerminate(application: UIApplication) {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
   }
+  
+  func getPriorLaunchDate() -> String? {
+    guard let priorLaunch = defaults.objectForKey("lastLaunch")  else {
+      return nil
+    }
+    print("prior launch date - \(priorLaunch)")
+    return priorLaunch as? String
+  }
 
+  func saveCurrentLaunchDate() -> String {
+    launchTime = NSDate()
+    let dateFormatter = NSDateFormatter()
+    dateFormatter.dateStyle = .ShortStyle
+    dateFormatter.timeStyle = .NoStyle
+    let justLaunchDate = dateFormatter.stringFromDate(launchTime)
+    defaults.setObject(justLaunchDate, forKey: "lastLaunch")
+    print("saved launch date - \(justLaunchDate)")
+    return justLaunchDate
+  }
 
 }
 

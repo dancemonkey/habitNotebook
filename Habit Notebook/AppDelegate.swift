@@ -16,10 +16,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     // Override point for customization after application launch.
+    
+    // Save prior launch date
+    // Compare prior launch to current launch, archive data if prior launch is from prior date
+    // For now this is just testing out using dates
     let launchTime = NSDate()
     let dateFormatter = NSDateFormatter()
-    dateFormatter.dateStyle = .NoStyle
-    dateFormatter.timeStyle = .ShortStyle
+    dateFormatter.dateStyle = .ShortStyle
+    dateFormatter.timeStyle = .NoStyle
     print(dateFormatter.stringFromDate(launchTime))
     return true
   }

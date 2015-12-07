@@ -21,7 +21,6 @@ class HabitViewController: UIViewController {
   
   // BOTTOM CONTROL BAR ITEMS
   @IBAction func showProgress(sender: UIBarButtonItem) {
-    print("showing progress")
   }
   @IBAction func addNewHabit(sender: UIBarButtonItem) {
   }
@@ -46,10 +45,13 @@ class HabitViewController: UIViewController {
     super.viewDidLoad()
   }
   
+  override func viewDidAppear(animated: Bool) {
+    parentViewController?.navigationItem.title = habit.name
+  }
+  
   override func viewWillAppear(animated: Bool) {
     super.viewWillAppear(true)
     total = habit.getTotalForToday()
-    
   }
 
   override func didReceiveMemoryWarning() {
@@ -81,6 +83,15 @@ class HabitViewController: UIViewController {
     newTextBox.userInteractionEnabled = true
     view.addSubview(newTextBox)
     print("\(label.frame) " + "\(newTextBox.frame)")
+  }
+  
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
+    if segue.identifier == "showProgress" {
+      let destVC = segue.destinationViewController as! ProgressTableViewController
+      destVC.data = self.habit
+    }
   }
 }
 

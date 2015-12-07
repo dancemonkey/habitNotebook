@@ -26,6 +26,9 @@ class HabitPagesViewController: UIPageViewController, UIPageViewControllerDataSo
     if data.count > 0 {
       let startingControllers = [getItemController(0)!]
       setViewControllers(startingControllers, direction: .Forward, animated: false, completion: nil)
+    } else if data.count == 0 {
+      // LOAD "GET STARTED" PAGE
+      // WRITE "GETBLANKCONTROLLER" PAGE
     }
     setAppearance()
   }

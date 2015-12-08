@@ -9,6 +9,7 @@
 protocol SaveDataDelegate {
   func saveData()
   func addNewPage(forHabit habit: Habit)
+  func removeItem(atIndex index: Int)
 }
 
 import UIKit
@@ -27,8 +28,7 @@ class HabitPagesViewController: UIPageViewController, UIPageViewControllerDataSo
       let startingControllers = [getItemController(0)!]
       setViewControllers(startingControllers, direction: .Forward, animated: false, completion: nil)
     } else if data.count == 0 {
-      // LOAD "GET STARTED" PAGE
-      // WRITE "GETBLANKCONTROLLER" PAGE
+      data.append(Habit(name: "NO HABITS", unitName: "Press the PLUS sign to add a new habit.", unitTotal: nil))
     }
     setAppearance()
   }
@@ -74,6 +74,12 @@ class HabitPagesViewController: UIPageViewController, UIPageViewControllerDataSo
   
   func addNewPage(forHabit habit: Habit) {
     data.append(habit)
+  }
+  
+  func removeItem(atIndex index: Int) {
+    data.removeAtIndex(index)
+    let startingControllers = [getItemController(0)!]
+    setViewControllers(startingControllers, direction: .Forward, animated: false, completion: nil)  
   }
   
   func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {

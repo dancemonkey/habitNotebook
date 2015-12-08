@@ -41,6 +41,9 @@
                                 <state key="normal" title="i did it!">
                                     <color key="titleColor" red="0.0" green="0.74390388259999995" blue="0.00022772667850000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <state key="disabled">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <state key="selected">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -73,8 +76,8 @@
                                     <barButtonItem title="Edit Habit" style="plain" id="9nX-43-ypV">
                                         <color key="tintColor" red="0.60784313729999995" green="0.30196078430000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
-                                            <action selector="addNewHabit:" destination="BYZ-38-t0r" id="AUl-8k-xkI"/>
-                                            <segue destination="25T-bB-cPT" kind="show" id="ROC-oQ-Juq"/>
+                                            <action selector="editHabit:" destination="BYZ-38-t0r" id="U6L-g1-pYO"/>
+                                            <segue destination="25T-bB-cPT" kind="show" id="b0a-2c-f8S"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="osZ-sY-DWm"/>
@@ -147,7 +150,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="cmY-sg-wxA"/>
                     <connections>
+                        <outlet property="editHabit" destination="9nX-43-ypV" id="w6x-BB-6JE"/>
                         <outlet property="habitInfo" destination="N5T-43-sdt" id="gnA-DX-wL8"/>
+                        <outlet property="performedHabit" destination="D6A-ok-AZ2" id="Tya-4a-nwq"/>
+                        <outlet property="showProgress" destination="4gL-qI-T2e" id="0nw-MB-MKW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -165,8 +171,21 @@
                     <view key="view" contentMode="scaleToFill" id="6fi-mV-B63">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get started by pressing &quot;+&quot;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="drV-Ya-UKa">
+                                <rect key="frame" x="196" y="289" width="209" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="drV-Ya-UKa" firstAttribute="centerX" secondItem="6fi-mV-B63" secondAttribute="centerX" id="GJr-bP-Adh"/>
+                            <constraint firstItem="drV-Ya-UKa" firstAttribute="centerY" secondItem="6fi-mV-B63" secondAttribute="centerY" id="wCd-bN-9Y3"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xuM-Sj-adA" userLabel="First Responder" sceneMemberID="firstResponder"/>

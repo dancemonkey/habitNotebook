@@ -22,27 +22,38 @@ class HabitViewController: UIViewController {
   // BOTTOM CONTROL BAR ITEMS
   @IBAction func showProgress(sender: UIBarButtonItem) {
   }
-  @IBAction func addNewHabit(sender: UIBarButtonItem) {
+  @IBOutlet weak var showProgress: UIBarButtonItem!
+  @IBAction func editHabit(sender: AnyObject) {
+    // saveDelegate.removeItem(atIndex: self.itemIndex)
+    // EVENTUALLY USE THIS SOMEWHERE ELSE, IN A 'DELETE' BUTTON
   }
+  @IBOutlet weak var editHabit: UIBarButtonItem!
   
   // LABELS
   @IBOutlet weak var habitInfo: UILabel!
   var total: Int! {
     didSet {
-      habitInfo.text = "\(getCurrentFormattedDate())" + "\n \n" + "\(habit.unitName!) - \(total)"
+      if !habitIsFirstHabit() {
+        habitInfo.text = "\(getCurrentFormattedDate())" + "\n \n" + "\(habit.unitName!) - \(total)"
+      } else if habitIsFirstHabit() {
+        habitInfo.text = "\(habit.unitName!)"
+      }
     }
   }
   
   // THE BIG MAIN BUTTON
+  @IBOutlet weak var performedHabit: UIButton!
   @IBAction func performedHabit(sender: UIButton) {
     habit.addToDailyTotal(habit.unitSize!)
     total = habit.getTotalForToday()
     saveDelegate.saveData()
   }
   
-  
   override func viewDidLoad() {
     super.viewDidLoad()
+    if habitIsFirstHabit() {
+      disableControlsForFirstHabit()  
+    }
   }
   
   override func viewDidAppear(animated: Bool) {
@@ -67,22 +78,21 @@ class HabitViewController: UIViewController {
     return itemIndex
   }
   
+  func disableControlsForFirstHabit() {
+    showProgress.enabled = false
+    performedHabit.enabled = false
+    editHabit.enabled = false
+  }
+  
+  func habitIsFirstHabit() -> Bool {
+    return habit.name == "NO HABITS"
+  }
+  
   func getCurrentFormattedDate() -> String {
     let dateFormatter = NSDateFormatter()
     dateFormatter.dateStyle = .FullStyle
     dateFormatter.timeStyle = .NoStyle
     return dateFormatter.stringFromDate(now)
-  }
-  
-  func editLabel(withText text: String, forLabel label: UILabel) {
-    let newTextBox = UITextField()
-    newTextBox.text = text
-    newTextBox.frame = label.frame
-    newTextBox.textAlignment = label.textAlignment
-    newTextBox.font = label.font
-    newTextBox.userInteractionEnabled = true
-    view.addSubview(newTextBox)
-    print("\(label.frame) " + "\(newTextBox.frame)")
   }
   
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

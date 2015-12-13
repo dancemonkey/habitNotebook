@@ -16,6 +16,7 @@ class ProgressTableViewController: UITableViewController {
   var data: Habit!
   var dates = [String]()
   var counts = [Int]()
+  var index = 0
   
     override func viewDidLoad() {
       super.viewDidLoad()

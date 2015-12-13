@@ -102,6 +102,7 @@ class HabitViewController: UIViewController {
     if segue.identifier == "showProgress" {
       let destVC = segue.destinationViewController as! ProgressTableViewController
       destVC.data = self.habit
+      destVC.index = self.itemIndex
     }
   }
 }

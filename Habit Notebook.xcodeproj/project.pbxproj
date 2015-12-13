@@ -17,6 +17,7 @@
 		10405B5B1BFC3C5D007C5B2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10405B591BFC3C5D007C5B2F /* LaunchScreen.storyboard */; };
 		10405B661BFC3C5D007C5B2F /* Habit_NotebookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10405B651BFC3C5D007C5B2F /* Habit_NotebookTests.swift */; };
 		105BE1A81C02962300D8AB2A /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105BE1A71C02962300D8AB2A /* Habit.swift */; };
+		108372711C1DFC5D00E3303F /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108372701C1DFC5D00E3303F /* NavigationViewController.swift */; };
 		10CACF2B1C13B8FE0003A046 /* AddNewHabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CACF2A1C13B8FE0003A046 /* AddNewHabitViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		10405B651BFC3C5D007C5B2F /* Habit_NotebookTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habit_NotebookTests.swift; sourceTree = "<group>"; };
 		10405B671BFC3C5D007C5B2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		105BE1A71C02962300D8AB2A /* Habit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
+		108372701C1DFC5D00E3303F /* NavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		10CACF2A1C13B8FE0003A046 /* AddNewHabitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewHabitViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,6 +91,7 @@
 			children = (
 				10405B541BFC3C5D007C5B2F /* Main.storyboard */,
 				10400B7D1C14FF6F005A1794 /* ProgressTableViewController.swift */,
+				108372701C1DFC5D00E3303F /* NavigationViewController.swift */,
 				10CACF2A1C13B8FE0003A046 /* AddNewHabitViewController.swift */,
 				10405B501BFC3C5D007C5B2F /* AppDelegate.swift */,
 				1010D1F31C06DC4C00279517 /* DataModel.swift */,
@@ -212,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				108372711C1DFC5D00E3303F /* NavigationViewController.swift in Sources */,
 				10CACF2B1C13B8FE0003A046 /* AddNewHabitViewController.swift in Sources */,
 				1010D1F41C06DC4C00279517 /* DataModel.swift in Sources */,
 				10400B7E1C14FF6F005A1794 /* ProgressTableViewController.swift in Sources */,

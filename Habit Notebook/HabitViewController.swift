@@ -103,6 +103,7 @@ class HabitViewController: UIViewController {
       let destVC = segue.destinationViewController as! ProgressTableViewController
       destVC.data = self.habit
       destVC.index = self.itemIndex
+      (parentViewController as! HabitPagesViewController).pageLeftOn = self.itemIndex
     }
   }
 }

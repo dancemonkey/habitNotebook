@@ -19,6 +19,7 @@ class HabitPagesViewController: UIPageViewController, UIPageViewControllerDataSo
   var data = [Habit]()
   let dataModel = DataModel()
   let starterHabit = (Habit(name: "NO HABITS", unitName: "Press the PLUS sign to add a new habit.", unitTotal: nil))
+  var pageLeftOn = 0
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -35,7 +36,7 @@ class HabitPagesViewController: UIPageViewController, UIPageViewControllerDataSo
   }
   
   override func viewDidAppear(animated: Bool) {
-    let startingControllers = [getItemController(0)!]
+    let startingControllers = [getItemController(pageLeftOn)!]
     setViewControllers(startingControllers, direction: .Forward, animated: false, completion: nil)
   }
 
@@ -104,7 +105,7 @@ class HabitPagesViewController: UIPageViewController, UIPageViewControllerDataSo
   }
   
   func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
-    return 0
+    return pageLeftOn
   }
   
   func saveData() {

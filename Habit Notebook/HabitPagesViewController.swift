@@ -108,6 +108,9 @@ class HabitPagesViewController: UIPageViewController, UIPageViewControllerDataSo
   
   func saveData() {
     dataModel.saveThis(data: data)
+    if data.count > 1 && data[0].name == "NO HABITS" {
+      data.removeFirst()
+    }
   }
   
   // DEBUG METHOD

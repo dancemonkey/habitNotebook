@@ -75,7 +75,7 @@
                                         <color key="tintColor" red="0.60784313729999995" green="0.30196078430000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <action selector="editHabit:" destination="BYZ-38-t0r" id="U6L-g1-pYO"/>
-                                            <segue destination="25T-bB-cPT" kind="show" id="b0a-2c-f8S"/>
+                                            <segue destination="25T-bB-cPT" kind="show" identifier="editHabit" id="b0a-2c-f8S"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="osZ-sY-DWm"/>

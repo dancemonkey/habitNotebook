@@ -71,6 +71,8 @@ class HabitPagesViewController: UIPageViewController, UIPageViewControllerDataSo
   func addNewHabit() {
     let addHabitVC = storyboard?.instantiateViewControllerWithIdentifier("AddNew") as! AddNewHabitViewController
     addHabitVC.saveDelegate = self
+    pageLeftOn = (self.viewControllers![0] as! HabitViewController).getItemIndex()
+    addHabitVC.index = pageLeftOn
     navigationController?.pushViewController(addHabitVC, animated: true)
   }
   

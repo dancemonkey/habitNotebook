@@ -6,8 +6,8 @@
 //  Copyright © 2015 Drew Lanning. All rights reserved.
 //
 
-// FIX THIS SO SEGUE UNWINDS BACK TO PAGEVIEWCONTROLLER PAGE IT WAS ON WHEN IT INITIALLY SEGUED
-//  - store page index and return to that?
+// FIX THIS SO SEGUE UNWINDS BACK TO NEWLY CREATED PAGE
+// ... or to previously left page if just cancelling without creating
 
 import UIKit
 
@@ -15,6 +15,7 @@ class AddNewHabitViewController: UIViewController {
 
   var newHabit: Habit?
   var saveDelegate: SaveDataDelegate!
+  var index = 0
   
   @IBOutlet weak var habitName: UITextField!
   @IBOutlet weak var habitUnitName: UITextField!

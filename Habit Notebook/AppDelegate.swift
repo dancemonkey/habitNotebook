@@ -18,7 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     // Override point for customization after application launch.
     
-    // COMPARE THE TWO BELOW IF THEY ARE WORKING CORRECTLY, AND THEN ARCHIVE IF PRIOR LAUNCH IS DIFF DATE THAN CURRENT
     let priorLaunch = getPriorLaunchDate()
     let currentLaunch = saveCurrentLaunchDate()
     
@@ -27,10 +26,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     if priorLaunch < currentLaunch {
-      print("you should be archiving all habits now")
-      print(priorLaunch)
+      print("you should be archiving all habits now for \(priorLaunch)")
+      let model = DataModel()
+      let data = model.getStoredData()
+      for habit in data {
+        habit.save(todayToHistory: habit.getTotalForToday(), forDate: priorLaunch!)
+      }
+      model.saveThis(data: data)
     } else if priorLaunch == currentLaunch {
-      print("it's the same day, no archiving")
+      print("last launch was earlier today, no archiving")
     }
     
     return true

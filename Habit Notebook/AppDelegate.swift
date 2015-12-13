@@ -28,15 +28,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     if priorLaunch < currentLaunch {
       print("you should be archiving all habits now for \(priorLaunch)")
       let model = DataModel()
+      print("initialized model")
       let data = model.getStoredData()
-      for habit in data {
-        habit.save(todayToHistory: habit.getTotalForToday(), forDate: priorLaunch!)
+      print("initialized data from model")
+      if data.count > 0 {
+        for habit in data {
+          habit.save(todayToHistory: habit.getTotalForToday(), forDate: priorLaunch!)
+          print("saving habits to history and clearing current count")
+        }
+        model.saveThis(data: data)
+        print("saving data back to defaults")
       }
-      model.saveThis(data: data)
     } else if priorLaunch == currentLaunch {
       print("last launch was earlier today, no archiving")
     }
-    
     return true
   }
 

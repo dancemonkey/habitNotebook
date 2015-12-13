@@ -13,7 +13,6 @@ class DataModel {
   let defaults = NSUserDefaults.standardUserDefaults()
   
   init() {
-    
     if let _ = defaults.objectForKey("StoredData") {
       let storedData = defaults.objectForKey("StoredData") as! NSData
       storage = NSKeyedUnarchiver.unarchiveObjectWithData(storedData) as! [Habit]

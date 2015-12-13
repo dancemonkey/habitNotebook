@@ -18,6 +18,7 @@ class HabitPagesViewController: UIPageViewController, UIPageViewControllerDataSo
   
   var data = [Habit]()
   let dataModel = DataModel()
+  let starterHabit = (Habit(name: "NO HABITS", unitName: "Press the PLUS sign to add a new habit.", unitTotal: nil))
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -28,7 +29,7 @@ class HabitPagesViewController: UIPageViewController, UIPageViewControllerDataSo
       let startingControllers = [getItemController(0)!]
       setViewControllers(startingControllers, direction: .Forward, animated: false, completion: nil)
     } else if data.count == 0 {
-      data.append(Habit(name: "NO HABITS", unitName: "Press the PLUS sign to add a new habit.", unitTotal: nil))
+      data.append(starterHabit)
     }
     setAppearance()
   }

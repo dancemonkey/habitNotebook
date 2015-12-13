@@ -8,6 +8,9 @@
 
 // include double-tap to edit items on habit screen
 // get rid of status bar in IB and have buttons show in pageVC status bar
+// saveDelegate.removeItem(atIndex: self.itemIndex)
+// EVENTUALLY USE THIS SOMEWHERE ELSE, IN A 'DELETE' BUTTON
+// When deleting habit, if none are left, re-load "starter" habit
 
 import UIKit
 
@@ -24,8 +27,6 @@ class HabitViewController: UIViewController {
   }
   @IBOutlet weak var showProgress: UIBarButtonItem!
   @IBAction func editHabit(sender: AnyObject) {
-    // saveDelegate.removeItem(atIndex: self.itemIndex)
-    // EVENTUALLY USE THIS SOMEWHERE ELSE, IN A 'DELETE' BUTTON
   }
   @IBOutlet weak var editHabit: UIBarButtonItem!
   

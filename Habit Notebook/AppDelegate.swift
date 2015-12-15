@@ -18,6 +18,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     // Override point for customization after application launch.
     
+    return true
+  }
+  
+  func application(application: UIApplication, willFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
     let priorLaunch = getPriorLaunchDate()
     let currentLaunch = saveCurrentLaunchDate()
     
@@ -33,6 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       print("initialized data from model")
       if data.count > 0 {
         for habit in data {
+          print(habit.getTotalForToday(), priorLaunch!)
           habit.save(todayToHistory: habit.getTotalForToday(), forDate: priorLaunch!)
           print("saving habits to history and clearing current count")
         }
@@ -42,6 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     } else if priorLaunch == currentLaunch {
       print("last launch was earlier today, no archiving")
     }
+    
     return true
   }
 

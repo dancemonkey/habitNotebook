@@ -16,7 +16,6 @@ class ProgressTableViewController: UITableViewController {
   
     override func viewDidLoad() {
       super.viewDidLoad()
-      
       for (date, count) in data.getHistory() {
         dates.append(date)
         counts.append(count)

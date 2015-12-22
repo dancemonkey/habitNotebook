@@ -198,7 +198,7 @@
         <!--Edit Habit-->
         <scene sceneID="yTB-Ac-SQ8">
             <objects>
-                <viewController storyboardIdentifier="Edit" title="Edit Habit" id="25T-bB-cPT" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Edit" title="Edit Habit" id="25T-bB-cPT" customClass="EditHabitViewController" customModule="Habit_Notebook" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QZf-bM-fb8"/>
                         <viewControllerLayoutGuide type="bottom" id="4gJ-bQ-Sux"/>
@@ -207,19 +207,88 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Editing it" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CPo-jX-IOH">
-                                <rect key="frame" x="267" y="289" width="67" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N8Y-it-faq">
+                                <rect key="frame" x="263" y="501" width="75" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="75" id="Hi9-fm-hKl"/>
+                                    <constraint firstAttribute="width" constant="75" id="P0n-aW-nF3"/>
+                                    <constraint firstAttribute="height" constant="75" id="SHa-jI-Vhw"/>
+                                </constraints>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="addHabit:" destination="ZAA-eP-8fb" eventType="touchUpInside" id="JJU-B8-C0p"/>
+                                    <action selector="doneEditing:" destination="25T-bB-cPT" eventType="touchUpInside" id="W2V-kY-MUQ"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="equalSpacing" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="bUs-Vi-zZa">
+                                <rect key="frame" x="174" y="24" width="254" height="195"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What's the habit?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pGU-Sb-VdB">
+                                        <rect key="frame" x="0.0" y="0.0" width="254" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="smoking / drinking water / push-ups" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Eq1-4Y-oPe">
+                                        <rect key="frame" x="0.0" y="39" width="254" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What units are we tracking?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AWE-q7-H2g">
+                                        <rect key="frame" x="0.0" y="87" width="254" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="# of cigarettes / quarts / reps" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G5y-sm-onI">
+                                        <rect key="frame" x="0.0" y="126" width="254" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is this a good or a bad habit?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DnX-eZ-2gi">
+                                        <rect key="frame" x="0.0" y="174" width="254" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="100" verticalHuggingPriority="100" misplaced="YES" distribution="equalCentering" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="hgn-n9-i1O">
+                                <rect key="frame" x="207" y="237" width="187" height="31"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="100" verticalHuggingPriority="100" text="Good" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0o1-Sx-sSA">
+                                        <rect key="frame" x="0.0" y="5" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="100" verticalHuggingPriority="100" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Oy6-Wl-9Pp">
+                                        <rect key="frame" x="72" y="0.0" width="51" height="31"/>
+                                        <color key="onTintColor" red="1" green="0.13898010890000001" blue="0.1566192927" alpha="1" colorSpace="calibratedRGB"/>
+                                    </switch>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="101" verticalHuggingPriority="101" text="Bad" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VF9-P1-bWb">
+                                        <rect key="frame" x="157" y="5" width="30" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="CPo-jX-IOH" firstAttribute="centerX" secondItem="e9G-oT-r9e" secondAttribute="centerX" id="FBd-Pj-PZ5"/>
-                            <constraint firstItem="CPo-jX-IOH" firstAttribute="centerY" secondItem="e9G-oT-r9e" secondAttribute="centerY" id="yFD-s3-sV4"/>
+                            <constraint firstItem="N8Y-it-faq" firstAttribute="centerX" secondItem="e9G-oT-r9e" secondAttribute="centerX" id="9Ku-Sg-arP"/>
+                            <constraint firstItem="hgn-n9-i1O" firstAttribute="top" secondItem="bUs-Vi-zZa" secondAttribute="bottom" constant="18" id="ArI-5o-a3a"/>
+                            <constraint firstItem="4gJ-bQ-Sux" firstAttribute="top" secondItem="N8Y-it-faq" secondAttribute="bottom" constant="24" id="RyG-Zf-90A"/>
+                            <constraint firstItem="pGU-Sb-VdB" firstAttribute="top" secondItem="QZf-bM-fb8" secondAttribute="bottom" constant="4" id="e7i-m6-7gB"/>
+                            <constraint firstItem="pGU-Sb-VdB" firstAttribute="centerX" secondItem="e9G-oT-r9e" secondAttribute="centerX" id="lBD-HT-bei"/>
+                            <constraint firstItem="hgn-n9-i1O" firstAttribute="centerX" secondItem="bUs-Vi-zZa" secondAttribute="centerX" id="wRo-Bm-GMA"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="habitName" destination="Eq1-4Y-oPe" id="I9d-PD-y6w"/>
+                        <outlet property="habitUnitName" destination="G5y-sm-onI" id="1uq-sk-DXf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Edk-ty-NjY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -321,7 +390,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EbI-Da-jW4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1861" y="1068"/>
+            <point key="canvasLocation" x="1851" y="1064"/>
         </scene>
         <!--Navigation View Controller-->
         <scene sceneID="lia-7q-sXx">

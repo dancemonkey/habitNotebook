@@ -9,7 +9,7 @@
 // include double-tap to edit items on habit screen
 // get rid of status bar in IB and have buttons show in pageVC status bar
 // saveDelegate.removeItem(atIndex: self.itemIndex)
-// EVENTUALLY USE THIS SOMEWHERE ELSE, IN A 'DELETE' BUTTON
+//   EVENTUALLY USE THIS SOMEWHERE ELSE, IN A 'DELETE' BUTTON
 // When deleting habit, if none are left, re-load "starter" habit
 
 import UIKit
@@ -103,9 +103,11 @@ class HabitViewController: UIViewController {
       let destVC = segue.destinationViewController as! ProgressTableViewController
       destVC.data = self.habit
       (parentViewController as! HabitPagesViewController).pageLeftOn = self.itemIndex
-    }
-    if segue.identifier == "editHabit" {
+    } else if segue.identifier == "editHabit" {
       (parentViewController as! HabitPagesViewController).pageLeftOn = self.itemIndex
+      let destVC = segue.destinationViewController as! EditHabitViewController
+      destVC.habit = self.habit
+      destVC.saveDelegate = (parentViewController as! HabitPagesViewController)
     }
   }
 }

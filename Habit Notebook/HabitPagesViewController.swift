@@ -82,8 +82,12 @@ class HabitPagesViewController: UIPageViewController, UIPageViewControllerDataSo
   
   func removeItem(atIndex index: Int) {
     data.removeAtIndex(index)
+    if data.count == 0 {
+      data.append(starterHabit)
+    }
     let startingControllers = [getItemController(0)!]
-    setViewControllers(startingControllers, direction: .Forward, animated: false, completion: nil)  
+    setViewControllers(startingControllers, direction: .Forward, animated: false, completion: nil)
+    saveData()
   }
   
   func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {

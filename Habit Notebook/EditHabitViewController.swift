@@ -6,6 +6,8 @@
 //  Copyright © 2015 Drew Lanning. All rights reserved.
 //
 
+// When deleting habit, if none are left, re-load "starter" habit
+
 import UIKit
 
 class EditHabitViewController: UIViewController {
@@ -20,22 +22,36 @@ class EditHabitViewController: UIViewController {
       navigationController?.popViewControllerAnimated(true)
     }
   }
+  @IBAction func deleteHabit(sender: UIButton) {
+    let confirmation = UIAlertController(title: "Delete Habit", message: "Are You Sure?", preferredStyle: .Alert)
+    let cancel = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+    let confirm = UIAlertAction(title: "Okay", style: .Destructive, handler: {(alert: UIAlertAction!) in self.removeHabit()})
+    confirmation.addAction(cancel)
+    confirmation.addAction(confirm)
+    presentViewController(confirmation, animated: true, completion: nil)
+  }
   
   var habit: Habit?
   var saveDelegate: SaveDataDelegate!
+  var habitIndex: Int!
   
-    override func viewDidLoad() {
-        super.viewDidLoad()
-      habitName.text = habit?.name
-      habitUnitName.text = habit?.unitName
-      
-        // Do any additional setup after loading the view.
-    }
+  override func viewDidLoad() {
+      super.viewDidLoad()
+    habitName.text = habit?.name
+    habitUnitName.text = habit?.unitName
+    
+      // Do any additional setup after loading the view.
+  }
+  
+  func removeHabit() {
+    saveDelegate.removeItem(atIndex: habitIndex)
+    navigationController?.popToRootViewControllerAnimated(true)
+  }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+  override func didReceiveMemoryWarning() {
+      super.didReceiveMemoryWarning()
+      // Dispose of any resources that can be recreated.
+  }
   
   override func viewWillAppear(animated: Bool) {
     

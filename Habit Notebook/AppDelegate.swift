@@ -36,10 +36,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         for habit in data {
           print(habit.getTotalForToday(), priorLaunch!)
           habit.save(todayToHistory: habit.getTotalForToday(), forDate: priorLaunch!)
-          print("saving habits to history and clearing current count")
         }
         model.saveThis(data: data)
-        print("saving data back to defaults")
       }
     } else if priorLaunch == currentLaunch {
     }

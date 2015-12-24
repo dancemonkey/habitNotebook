@@ -208,7 +208,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N8Y-it-faq">
-                                <rect key="frame" x="263" y="501" width="75" height="75"/>
+                                <rect key="frame" x="263" y="479" width="75" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="75" id="Hi9-fm-hKl"/>
                                     <constraint firstAttribute="width" constant="75" id="P0n-aW-nF3"/>
@@ -274,16 +274,38 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xrZ-l3-TMx">
+                                <rect key="frame" x="20" y="562" width="85" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="85" id="Vh8-CA-jSh"/>
+                                    <constraint firstAttribute="height" constant="30" id="ZYK-1r-Uvq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="Delete Habit">
+                                    <color key="titleColor" red="1" green="0.13898010890000001" blue="0.1566192927" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="deleteHabit:" destination="25T-bB-cPT" eventType="touchUpInside" id="f1j-qc-eal"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="xrZ-l3-TMx" firstAttribute="centerX" secondItem="e9G-oT-r9e" secondAttribute="centerX" id="5SV-q6-9iH"/>
+                            <constraint firstItem="4gJ-bQ-Sux" firstAttribute="top" secondItem="xrZ-l3-TMx" secondAttribute="bottom" constant="8" id="6UR-1R-G6u"/>
                             <constraint firstItem="N8Y-it-faq" firstAttribute="centerX" secondItem="e9G-oT-r9e" secondAttribute="centerX" id="9Ku-Sg-arP"/>
                             <constraint firstItem="hgn-n9-i1O" firstAttribute="top" secondItem="bUs-Vi-zZa" secondAttribute="bottom" constant="18" id="ArI-5o-a3a"/>
-                            <constraint firstItem="4gJ-bQ-Sux" firstAttribute="top" secondItem="N8Y-it-faq" secondAttribute="bottom" constant="24" id="RyG-Zf-90A"/>
+                            <constraint firstItem="xrZ-l3-TMx" firstAttribute="leading" secondItem="e9G-oT-r9e" secondAttribute="leadingMargin" id="K7i-Fc-igw"/>
+                            <constraint firstItem="4gJ-bQ-Sux" firstAttribute="top" secondItem="N8Y-it-faq" secondAttribute="bottom" constant="46" id="RyG-Zf-90A"/>
                             <constraint firstItem="pGU-Sb-VdB" firstAttribute="top" secondItem="QZf-bM-fb8" secondAttribute="bottom" constant="4" id="e7i-m6-7gB"/>
                             <constraint firstItem="pGU-Sb-VdB" firstAttribute="centerX" secondItem="e9G-oT-r9e" secondAttribute="centerX" id="lBD-HT-bei"/>
                             <constraint firstItem="hgn-n9-i1O" firstAttribute="centerX" secondItem="bUs-Vi-zZa" secondAttribute="centerX" id="wRo-Bm-GMA"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="5SV-q6-9iH"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="habitName" destination="Eq1-4Y-oPe" id="I9d-PD-y6w"/>
@@ -292,7 +314,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Edk-ty-NjY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1861" y="389"/>
+            <point key="canvasLocation" x="1889" y="422"/>
         </scene>
         <!--Add New-->
         <scene sceneID="aFk-2K-FEk">
